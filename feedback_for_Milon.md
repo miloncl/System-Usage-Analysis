@@ -1,6 +1,6 @@
 # Feedback for Milon: 
 
-0/. Good job on creating the code for the transition probs/matrices as well as accuracy. Pls see the below feedbacks for reasons behind my adjustment in the code
+0/. Pls see the below feedbacks for reasons behind my adjustment in the code
 
 1/. 
 
@@ -35,7 +35,7 @@ def get_transitional_matrix(trans_prob, X):
     matrix = pd.DataFrame(probs_for_matrix, index = all_exes, columns = all_exes)
     return matrix
 ```
-- note that: the transition probability is going from row to col ==> row happens first, then col happens later ==> pair should be pair = (row,col), but you put pair=(col,row)
+- note that: the transition probability is going from row to col ==> row happens first, then col happens later ==> pair should be pair = (row,col), but you put pair=(col,row); the inner and outer loops should also have their "col", "row" swapped
 
 4/. Just terminology: transitional prob/matrix maybe the correct grammar, but let's just put transition probability/matrix due to the mathematical aspect.
 
