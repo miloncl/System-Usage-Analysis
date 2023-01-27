@@ -12,6 +12,7 @@ def get_conditional_prob(df):
 
 - this is not the formula of conditional probability (i.e. there's no "given" term, which is represented by this symbol |)
 - this is just a regular probability of appearance of an executable file over all possible executables
+- no usage in the transition matrix, so excluded it
 
 2/. for split_train_test: test size = 20% (you put 30%)
 
@@ -38,11 +39,5 @@ def get_transitional_matrix(trans_prob, X):
 
 4/. Just terminology: transitional prob/matrix maybe the correct grammar, but let's just put transition probability/matrix due to the mathematical aspect.
 
-5/. 
-``` 
-matrix = matrix.T
-```
-- maybe you didn't notice, but matrix and matrix.T have the same row/col order b/c you basically using the same sequence of exe files to create both the rows and cols (see the matrix output)
-
-6/. typo in the return of HMM
+5/. typo in the return of predict_HMM
 - transition_matrix, not matrix
