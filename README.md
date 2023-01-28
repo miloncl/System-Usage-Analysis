@@ -9,5 +9,5 @@
 - Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/Process%20and%20EDA.ipynb">Process_and_EDA.ipynb</a>
 
 ### Week 3:
-- Presentation: HMM: Transition Matrix, Model Accuracy, and Emission Matrix
+- Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/presentation/%5BDSC%20180B%5D%20Quarter%202%20Week%203.pdf">HMM: Transition Matrix, Model Accuracy, and Emission Matrix</a>
 - Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/HMM.ipynb">HMM.ipynb</a>
