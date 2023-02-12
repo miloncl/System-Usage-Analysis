@@ -12,38 +12,29 @@ import datetime
 
 
 sys.path.insert(0, 'src/data')
-sys.path.insert(0, 'src/model')
+sys.path.insert(0, 'src/models')
 
-from get_data import get_data
-from model import model
+from make_dataset import get_data
+from hmm_model import model
 
 def main(targets):
     '''
-    Runs the main project pipeline logic, given the targets.
-    targets must contain: 'data'. 
+    This function takes in the "targets" which contain the data
+    and runs the main logic of the project
     '''
     if 'data' in targets:
         with open('config/data-params.json') as fh:
-            data_cfg = json.load(fh)
+            data_configuration = json.load(fh)
 
-        # make the data target
-        string_df, string_ull = get_data(**data_cfg)
+        # make data
+        df = get_data(**data_configuration)
         
-    if 'model' in targets:
-        model(string_df)
-        
-    if 'test' in targets:
-        with open('config/data-params.json') as fh:
-            data_cfg = json.load(fh)
+        if df is None:
+            return
 
-        # make the data target
-        string_df, string_ull = get_data(**data_cfg)
-        
-        model(string_df)
+        model(df)
 
 
 if __name__ == '__main__':
-    # run via:
-    # python main.py test
     targets = sys.argv[1:]
     main(targets)

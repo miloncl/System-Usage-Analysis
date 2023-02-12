@@ -1,0 +1,4 @@
+{
+    "dockerhub-id": "ngtrcathy/panda",
+    "build-script": "python run.py test"
+}
