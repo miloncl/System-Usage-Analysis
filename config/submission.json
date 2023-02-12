@@ -1,4 +1,4 @@
 {
-    "dockerhub-id": "ngtrcathy/panda",
-    "build-script": "python run.py test"
+    "GitHub Repository": "https://github.com/miloncl/System-Usage-Analysis",
+    "DockerHub Repository": "ngtrcathy/panda"
 }

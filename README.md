@@ -48,3 +48,7 @@ Project
 ### Week 4:
 - Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/weekly_presentation/%5BDSC%20180B%5D%20-%20Quarter%202%20Week%204.pdf">Study LSTM: Data Prep, Data Viz, Research on RNN/LSTM</a>
 - Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/notebooks/Process%20and%20EDA.ipynb"> Process_and_EDA.ipynb</a>
+
+### Week 5:
+- Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/weekly_presentation/%5BDSC%20180B%5D%20-%20Quarter%202%20Week%205.pdf">RNN (Vanilla + LSTM)</a>
+- Source Code:
