@@ -6,7 +6,7 @@ from collections import defaultdict
 
 def hmm_model(df):
     """HMM Model with Transition Matrix"""
-    
+
     def get_clean_data(df):
         """Get only the column containing the exe files"""
         return df[df['ID_INPUT'] == 4].drop(columns = ['Unnamed: 0']).reset_index(drop = True)
@@ -101,5 +101,11 @@ def hmm_model(df):
         accuracy = get_accuracy(X_test, y_test, transition_matrix, n)
         return [transition_matrix, accuracy]
     
+    def save_to_file(matrix, outfile_name, outfile_ext = 'csv'):
+        """Save matrices to files after finding them"""
+        out = outfile_name + '.' + outfile_ext
+        matrix.to_csv(out, index=True)
+    
     matrix, accuracy = predict_HMM(df, n=1, rand_state=20)
+    save_to_file(matrix, "outputs/HMM/transition_mt_checkpoint", outfile_ext = 'txt')
     print(accuracy)
