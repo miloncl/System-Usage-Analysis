@@ -1,0 +1,38 @@
+ID_INPUT = {
+    0: {
+        'Foreground Window Root ID'
+    }, 
+    1: {
+        'Foreground Window Process ID'
+    }, 
+    2: {
+        'Foreground Window Thread ID'
+    }, 
+    3: {
+        'Foreground Window Name'
+    }, 
+    4: {
+        'Foreground Window Image Name'
+    }, 
+    5: {
+        'Foreground Window Class Name'
+    }, 
+    6: {
+        'Window Upper Left X Coordinate'
+    }, 
+    7: {
+        'Window Lower Right X Coordinate'
+    }, 
+    8: {
+        'Window Upper Left Y Coordinate'
+    }, 
+    9: {
+        'Window Lower Right X Coordinate'
+    }, 
+    10: {
+        'Check if the App is Hung or Not',
+    }, 
+    11: {
+        'Check if the App is Immersive or Not'
+    }, 
+}

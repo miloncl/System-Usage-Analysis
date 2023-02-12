@@ -1,0 +1,11 @@
+DATAFRAME_DESCRIPTION = {
+    'MEASUREMENT_TIME': {
+        'Time the mouse click occurred'
+    },
+    'VALUE': {
+        'Excutable filenames'
+    },
+    'Time_Used': {
+        'Duration of time used on an app'
+    }
+}
