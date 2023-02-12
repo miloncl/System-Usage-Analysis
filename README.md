@@ -31,6 +31,7 @@ Project
 ├── config
 │   ├── data-params.json <- Save the inputs for the function calls
 │   └── submission.json <- GitHub repo and Docker image links
+│
 ├── .ipynb_checkpoints <- temporary notebooks containing work in progress
 
 ```
@@ -40,7 +41,7 @@ Project
     On DSMLP,
     1. Cloning our GitHub repository.
     2. Launching a container with your Docker image.
-    3. Running ```python run.py test``.
+    3. Running ```python run.py test```.
 
 ## Specific Links to Presentations and Source Code
 
