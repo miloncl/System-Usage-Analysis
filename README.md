@@ -1,8 +1,10 @@
 # DSC 180B
 
 ## Introduction
+- ... 
 
 ## Overview
+- We try to closely follow the template for Data Science projects by <a href="https://drivendata.github.io/cookiecutter-data-science/">Cookie Cutter Data Sciece </a>
 ```
 Project
 ├── .gitignore         <- Files to keep out of version control (e.g. data/binaries).
