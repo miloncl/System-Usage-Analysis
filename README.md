@@ -32,6 +32,13 @@ Project
     └── data-params.json <- Save the inputs for the function calls
 ```
 
+### Instruction to Run the code
+- For the Methodology Staff
+    - On DSMLP,
+    1. Cloning our GitHub repository.
+    2. Launching a container with your Docker image.
+    3. Running ```python run.py test``.
+
 ## Specific Links to Presentations and Source Code
 
 ### Week 1: 
