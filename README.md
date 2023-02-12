@@ -29,12 +29,15 @@ Project
 │   └── visualization  <- Scripts to create exploratory and results-oriented viz.
 │       └── visualize.py
 ├── config
-    └── data-params.json <- Save the inputs for the function calls
+│   ├── data-params.json <- Save the inputs for the function calls
+│   └── submission.json <- GitHub repo and Docker image links
+├── .ipynb_checkpoints <- temporary notebooks containing work in progress
+
 ```
 
 ### Instruction to Run the code
 - For the Methodology Staff
-    - On DSMLP,
+    On DSMLP,
     1. Cloning our GitHub repository.
     2. Launching a container with your Docker image.
     3. Running ```python run.py test``.
