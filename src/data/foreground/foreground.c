@@ -37,13 +37,10 @@
 #ifdef __PL_WINDOWS__
 DWORD thread_id = 0;
 HANDLE thread_handle = NULL;
-//char window_name[STRING_BUFFERS_SIZE] = { '\0' };
 char image_name[MAX_PATH] = { '\0' };
 char class_name[STRING_BUFFERS_SIZE] = { '\0' };
 wchar_t window_name[STRING_BUFFERS_SIZE] = L"";
 wchar_t* PATH_SEPARATOR_CHAR_UNI = L"\\";
-//wchar_t image_name[MAX_PATH] = L"";
-//wchar_t class_name[STRING_BUFFERS_SIZE] = L"";
 #endif // __PL_WINDOWS__
 
 /*-----------------------------------------------------------------------------
@@ -320,7 +317,6 @@ ESRV_API unsigned int __stdcall foreground_window_event_listener_thread(void* px
 
 	unsigned long long int root_id = 0;
 
-	/*TCHAR window_name_tchar[STRING_BUFFERS_SIZE] = { _T('\0') };*/
 	TCHAR image_name_tchar[MAX_PATH] = { _T('\0') };
 	TCHAR class_name_tchar[STRING_BUFFERS_SIZE] = { _T('\0') };
 	
@@ -328,8 +324,6 @@ ESRV_API unsigned int __stdcall foreground_window_event_listener_thread(void* px
 	char* prev_token = NULL;
 
 	wchar_t uni_title_buffer[STRING_BUFFERS_SIZE] = { L'\0' };
-	//wchar_t uni_module_name_buffer[STRING_BUFFERS_SIZE_2] = { L'\0' };
-	//wchar_t uni_class_name_buffer[STRING_BUFFERS_SIZE] = { L'\0' };
 
 	//-------------------------------------------------------------------------
 	// Tokenizer Pointers
@@ -338,13 +332,6 @@ ESRV_API unsigned int __stdcall foreground_window_event_listener_thread(void* px
 	wchar_t* uni_title_next_token = NULL;
 	wchar_t* uni_title = NULL;
 
-	//wchar_t* uni_module_name_token = NULL;
-	//wchar_t* uni_module_name_next_token = NULL;
-	//wchar_t* uni_module_name = NULL;
-
-	//wchar_t* display_name = NULL;
-	//wchar_t* display_name_token = NULL;
-	//wchar_t* display_name_next_token = NULL;
 
 	RECT rectangle;
 	unsigned long long x_upper_left = 0;
@@ -442,27 +429,6 @@ ESRV_API unsigned int __stdcall foreground_window_event_listener_thread(void* px
 			root_id
 		);
 
-		// Get window name (window's title bar)
-		//(void)InternalGetWindowText(
-		//	foreground_handle,
-		//	window_name_tchar,
-		//	sizeof(window_name_tchar) / sizeof(TCHAR)
-		//);
-		//(void)wcstombs_s(
-		//	&stret,
-		//	window_name,
-		//	sizeof(window_name),
-		//	window_name_tchar,
-		//	_TRUNCATE
-		//);
-
-		//// Remove PII path by the separator "//"
-		//token = strtok(window_name, PATH_SEPARATOR_CHAR);
-		//prev_token = NULL;
-		//while (token != NULL) {
-		//	prev_token = token;
-		//	token = strtok(NULL, PATH_SEPARATOR_CHAR);
-		//}
 		(void)GetWindowTextW(
 			foreground_handle,
 			uni_title_buffer,
@@ -484,10 +450,7 @@ ESRV_API unsigned int __stdcall foreground_window_event_listener_thread(void* px
 		}
 
 		// Set the window name after removing PII
-		/*SET_INPUT_STRING_ADDRESS(
-			WINDOW_NAME,
-			prev_token
-		);*/
+		
 		if (uni_title == NULL) {
 			uni_title = L"File Explorer"; // first opened
 		}
