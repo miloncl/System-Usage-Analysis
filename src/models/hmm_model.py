@@ -9,7 +9,7 @@ def hmm_model(df):
 
     def get_clean_data(df):
         """Get only the column containing the exe files"""
-        return df[df['ID_INPUT'] == 4].drop(columns = ['Unnamed: 0']).reset_index(drop = True)
+        return df[df['ID_INPUT'] == 4].reset_index(drop = True)
 
     def get_all_pairs(df):
         """Get pairs of exe files happening next to each other"""
