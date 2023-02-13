@@ -30,6 +30,7 @@ def main(targets):
         df = get_data(**data_configuration)
         
         if df is None:
+            print('No available data')
             return
 
         hmm_model(df)
