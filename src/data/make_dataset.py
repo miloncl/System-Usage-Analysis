@@ -6,7 +6,7 @@ import pandas as pd
 def get_data(filepath):
     """Get data for the models"""
 
-    if filepath not in ['../../data/raw/user1/', '../../data/raw/user2/']:
+    if filepath not in ['../../../data/raw/user1/', '../../../data/raw/user2/']:
         return None
 
     data = []
