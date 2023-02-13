@@ -36,8 +36,9 @@ Project
 
 ```
 
-### Instruction to Run the code
+## Instruction to Run the code
 - For the Methodology Staff
+    
     On DSMLP,
     1. Cloning our GitHub repository.
     2. Launching a container with your Docker image.
