@@ -79,14 +79,13 @@ Solutions to Reducing the Initial User-CPU Latency
       \node [anchor=north west, inner sep=3cm] at ([xshift=0.0cm,yshift=1.75cm]current page.north west)
       {\includegraphics[height=5.5cm]{HDSI_Intel.png}}; 
     \end{tikzpicture}
-}
 
-{
     \begin{tikzpicture}[remember picture,overlay]
       \node [anchor=north west, inner sep=3cm] at ([xshift=110.0cm,yshift=1.75cm]current page.north west)
       {\includegraphics[height=5.5cm]{ucsd_logo.png}}; 
     \end{tikzpicture}
 }
+
 \begin{frame}[t]
 \begin{columns}[t]
 \separatorcolumn
@@ -214,16 +213,36 @@ Solutions to Reducing the Initial User-CPU Latency
     \begin{itemize}
        \item \textbf{Problem Statement 1}:
        \item \textbf{Problem Statement 2}: Predict the use time of an app/tab using the past \textit{time-series} data
-       \end{itemize}
+       \item \textbf{Why RNNs?}
+       
+       1. \textbf{A Looping Mechanism} The current prediction is impacted by the former predictions
 
-       three main characteristics of RNNs. 
-A looping mechanism, where the current prediction is impacted by the former predictions. 
-An analogy of this is how our brain recognizes the patterns of the alphabetical order “ABCD…” by using the sequential information of a text. 
-RNNs share parameters (i.e. the weight matrices W’s) across the timestamps and across the positions. 
-Hence, RNNs with more parameters will take more computational costs in training [15]. 
-Thirdly, RNNs can easily face the gradient problems of vanishing or exploding. 
-More specifically, the vanishing problem means the parameter update step will become insignificant once the gradient diminishes, whereas the update step becomes highly large when there exists a fast increase in the gradient [15]
+       2. \textbf{Parameter Sharing} Weight matrices are shared across the timestamps / positions -> internal memory, weighting the importance of data
+       
+       3. \textbf{Gradient Vanishing/Exploding Problem} The parameter update steps become insignificant/significant depending on the gradients
 
+       >> But overall, robust to trends/seasonality/temporal features in noisy data 
+
+       \item \textbf{Feature Engineering}:
+       
+       1. \textbf{Example 1}:
+
+       2. \textbf{Example 2}:
+       
+       3. \textbf{Example 3}:
+       
+       \item \textbf{Experiments with RNNs}:
+       
+       1. \textbf{Vanilla RNN}: 
+
+       2. \textbf{LSTM}:
+       
+       3. \textbf{GRU}:
+
+
+
+
+      \end{itemize}
     \end{exampleblock}
 
     \begin{block}{Prediction Results}
