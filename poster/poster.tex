@@ -20,6 +20,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.14}
 \usepackage{anyfontsize}
+\usepackage{xcolor,mdframed}
 
 % ====================
 % Lengths
@@ -43,18 +44,18 @@
 Solutions to Reducing the Initial User-CPU Latency
 }
 
-\author{Thy Nguyen \and Milon Chakkalakal \and Pranav Thaenraj}
+\author{\LARGE{Thy Nguyen \and Milon Chakkalakal \and Pranav Thaenraj}}
 
-\institute[shortinst]{Advisors: Jamel Tayeb, Bijan Arbab, Sruti Sahani, Oumaima Makhlouk, Praveen Polasam, Chansik Im}
+\institute[shortinst]{\large{Advisors: Jamel Tayeb, Bijan Arbab, Sruti Sahani, Oumaima Makhlouk, Praveen Polasam, Chansik Im}}
 
 % ====================
 % Footer (optional)
 % ====================
 
-\footercontent{
-  \href{https://www.example.com}{https://www.example.com} \hfill
-  ABC Conference 2025, New York --- XYZ-1234 \hfill
-  \href{mailto:alyssa.p.hacker@example.com}{alyssa.p.hacker@example.com}}
+\footercontent{ \large{
+  https://github.com/miloncl/System-Usage-Analysis \hfill
+  UCSD HDSI - Intel \hfill
+  {\{tcn002,mlonappa,ethaenra\}@ucsd.edu}}}
 % (can be left out to remove footer)
 
 % ====================
@@ -92,90 +93,52 @@ Solutions to Reducing the Initial User-CPU Latency
 
 \begin{column}{\colwidth}
 
-  \begin{block}{Abstract}
+  \begin{block}{\LARGE{Abstract}}
 
-    Some block contents, followed by a diagram, followed by a dummy paragraph.
+    \large{
+    “Data loading” icons signal an unpleasant user wait experience and can tear people away from using an app. 
+    This problem adversely affects user experience, but limited research has been done, 
+    so we perform a study to collect user-app interaction data, analyze past behaviors to understand the user-wait events, 
+    and propose solutions to reduce such waiting times. 
+    Our study includes 2 phases: collecting data using Intel’s XLSDK and analyzing data using EDA, HMM, and LSTM/RNN.}
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
-    eget libero ac ullamcorper. Integer et euismod ante. Aenean vestibulum
-    lobortis augue, ut lobortis turpis rhoncus sed. Proin feugiat nibh a
-    lacinia dignissim. Proin scelerisque, risus eget tempor fermentum, ex
-    turpis condimentum urna, quis malesuada sapien arcu eu purus.
+    \begin{figure}\includegraphics[width=0.6\textwidth, height=5cm]{user_wait.png}\end{figure}
 
   \end{block}
 
-    \begin{alertblock}{Methodology of Data Collection}
+    \begin{alertblock}{\LARGE{Methodology of Data Collection}}
 
-    We write the \textbf{\textit{input libraries (ILs)}} using the  software development kit \textbf{\textit{XLSDK User Guide}}, along with the \textbf{\textit{Environment Server (ESRV)}}  toolchain  and the \textit{ \textbf{Intel® System Usage Report  (SUR)}} framework to anonymously gather and analyze data usage from multiple devices. The ILs include: 
+      \large{We write the \textbf{\textit{input libraries (ILs)}} using the  software development kit \textbf{\textit{XLSDK User Guide}}, along with the \textbf{\textit{Environment Server (ESRV)}}  toolchain  and the \textit{ \textbf{Intel® System Usage Report  (SUR)}} framework to anonymously gather and analyze data usage from multiple devices. The ILs include: 
 
     \begin{itemize}
-      \item \textbf{Mouse Input IL}  to capture the (X, Y) positions of the mouse in pixels (with or without noise)
+      \item \textbf{Mouse Input IL}: capture the (X, Y) positions of the mouse in pixels (with or without noise)
 
-      \item \textbf{User Wait IL} to retrieve the cursor type (e.g. loading or working smoothly) and its timestamp 
+      \item \textbf{User Wait IL}: retrieve the cursor type (e.g. loading or working smoothly) and its timestamp 
 
-      \item \textbf{Mouse Hook IL} to track the UI objects clicked by the mouse
+      \item \textbf{Mouse Hook IL}: track the UI objects clicked by the mouse
 
-      \item \textbf{Foreground Window IL} to log the window's details detected by mouse clicks or time ticks
+      \item \textbf{Foreground Window IL}: log the window's details detected by mouse clicks or time ticks
 
-      \item \textbf{Desktop Mapper IL} to map all the open app windows in the z-order and store the relative position of an app on the screen as well as their individual size
-
+      \item \textbf{Desktop Mapper IL}: map all the open app windows in the z-order and store the relative position of an app on the screen as well as their individual size
+    
     \end{itemize}
 
-    We mainly focus on the data collected from the \textit{Foreground Window IL} for further exploration.
+    We mainly focus on the data collected from the \textit{Foreground Window IL} for further exploration. }
     \begin{figure}
       \includegraphics[width=0.475 \textwidth, height=11.5cm]{mouse_movement.png}
         \hspace{\fill}
         \includegraphics[width=0.475\textwidth, height=11.5cm]{foreground_desktopMapper.PNG}
-      \caption{Mouse Movement, Foreground Window, and Z-axis}\label{fig:xyz}
+      % \caption{\large{Mouse Movement, Foreground Window, and Z-axis}}\label{fig:xyz}
     \end{figure}
   \end{alertblock}
 
-  \begin{block}{Data Preprocessing}
-  \end{block}
-\begin{block}{Exploratory Data Analysis}
+\begin{block}{\LARGE{Exploratory Data Analysis}}
 
-    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
-    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
-    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
-    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-    posuere.
-
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}
-        \begin{axis}[
-            scale only axis,
-            no markers,
-            domain=0:2*pi,
-            samples=100,
-            axis lines=center,
-            axis line style={-},
-            ticks=none]
-          \addplot[red] {sin(deg(x))};
-          \addplot[blue] {cos(deg(x))};
-        \end{axis}
-      \end{tikzpicture}
-      \caption{Another figure caption.}
-    \end{figure}
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}[scale=6]
-        \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
-        \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
-          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
-      \end{tikzpicture}
-      \caption{A figure caption.}
-    \end{figure}
-    \begin{enumerate}
-      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-        nulla accumsan, non rhoncus lectus condimentum.
-    \end{enumerate}
+  \begin{figure}
+    \begin{mdframed}[backgroundcolor=gray!5,linecolor=gray!10]
+    \centering{\includegraphics[width=0.96\textwidth, height=15cm]{time_spent.png}}
+    \end{mdframed}
+  \end{figure}
 
   \end{block}
 
@@ -185,9 +148,9 @@ Solutions to Reducing the Initial User-CPU Latency
 
 \begin{column}{\colwidth}
 
-\begin{exampleblock}{Methodology of Predictive Tasks}
+\begin{exampleblock}{\LARGE{Methodology of Predictive Tasks}}
 
-    \heading{Hidden Markov Model  (HMM)}
+  \large{\heading{Hidden Markov Model  (HMM)}
 
    \begin{itemize}
        \item \textbf{Problem Statement}: Predict the likelihood of using an app \textit{given} the former sequence of application usage
@@ -213,166 +176,142 @@ Solutions to Reducing the Initial User-CPU Latency
         \centering{$P($"chrome.exe" -> "Spotify"$)$ =  $P($"Spotify" | "chrome.exe"$)$}
        \end{itemize}
           
-    \heading{Recurrent Neural Network (RNN)}
+    \heading{Recurrent Neural Network (LSTM/RNN)}
 
     \begin{itemize}
        \item \textbf{Problem Statement}: Predict the (total) time usage of an app/tab/recorded process using the past \textit{time-series} data
-       \begin{figure}\includegraphics[width=0.8\textwidth, height=12cm]{Why_RNN.PNG}\end{figure}
+       \begin{figure}\includegraphics[width=0.95\textwidth, height=25cm]{lstm_1.png}\end{figure}
 
        \item \textbf{Feature Engineering}:
        
-       1. \textbf{Example 1}:
-
-       2. \textbf{Example 2}:
+       1. Use time per day - split hourly between 24 columns (labeled 0 - 23)\\
+       2. Lookback 3-5 time steps from the current timestamp\\
+       3. One-hot-encoding(process names or weekdays); np.sin-encoding(hours)
        
-       3. \textbf{Example}:
-       
-       \item \textbf{Experiments with RNNs}:
-       
-       1. \textbf{Vanilla RNN}: 
+       \item \textbf{Experiments}: implemented by \textit{Keras/Tensorflow}
+      
+       1. \textbf{Train/Test}: 80/20, no shuffle\\
+       2. \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if within 3 mins of real vals
 
-       2. \textbf{LSTM}:
-       
-       3. \textbf{GRU}:
-
-
-
-
-      \end{itemize}
+      \end{itemize} }
     \end{exampleblock}
-
-    \begin{block}{Prediction Results}
-
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
-
-    \begin{table}
-      \centering
-      \begin{tabular}{l r r c}
-        \toprule
-        \textbf{First column} & \textbf{Second column} & \textbf{Third column} & \textbf{Fourth} \\
-        \midrule
-        Foo & 13.37 & 384,394 & $\alpha$ \\
-        Bar & 2.17 & 1,392 & $\beta$ \\
-        Baz & 3.14 & 83,742 & $\delta$ \\
-        Qux & 7.59 & 974 & $\gamma$ \\
-        \bottomrule
-      \end{tabular}
-      \caption{A table caption.}
-    \end{table}
-
-    Donec quis posuere ligula. Nunc feugiat elit a mi malesuada consequat. Sed
-    imperdiet augue ac nibh aliquet tristique. Aenean eu tortor vulputate,
-    eleifend lorem in, dictum urna. Proin auctor ante in augue tincidunt
-    tempor. Proin pellentesque vulputate odio, ac gravida nulla posuere
-    efficitur. Aenean at velit vel dolor blandit molestie. Mauris laoreet
-    commodo quam, non luctus nibh ullamcorper in. Class aptent taciti sociosqu
-    ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-    Nulla varius finibus volutpat. Mauris molestie lorem tincidunt, iaculis
-    libero at, gravida ante. Phasellus at felis eu neque suscipit suscipit.
-    Integer ullamcorper, dui nec pretium ornare, urna dolor consequat libero,
-    in feugiat elit lorem euismod lacus. Pellentesque sit amet dolor mollis,
-    auctor urna non, tempus sem.
-\begin{table}
-      \centering
-      \begin{tabular}{l r r c}
-        \toprule
-        \textbf{First column} & \textbf{Second column} & \textbf{Third column} & \textbf{Fourth} \\
-        \midrule
-        Foo & 13.37 & 384,394 & $\alpha$ \\
-        Bar & 2.17 & 1,392 & $\beta$ \\
-        Baz & 3.14 & 83,742 & $\delta$ \\
-        Qux & 7.59 & 974 & $\gamma$ \\
-        \bottomrule
-      \end{tabular}
-      \caption{A table caption.}
-    \end{table}
-  \end{block}
-
-  
 
 \end{column}
 
 \separatorcolumn
 
 \begin{column}{\colwidth}
+  
+\begin{block}
+  {\LARGE{Prediction Results}}
 
-  \begin{block}{}
+  \large{
+    \begin{table}
+      \centering
+      \begin{tabular}{l l l l}
+        \toprule
+        \multicolumn{1}{|l|}{\textbf{Model}} & \multicolumn{1}{|l|}{\textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins}} & \multicolumn{1}{|l|}{\textbf{Performance}} \\
+        \midrule
+        
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input RNN (64N)\\ Hidden Dense (4N)\\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (.01, .02]  \\ (.02, .2] \\ (.2, max] \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 691, TN = 0\\ FP = 65, FN = 0 \\ ACC = $\approx$ 91.4\% \end{tabular}} \\
+        \midrule
 
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}} &                                                                                                     
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (.01, .02]  \\ (.02, .2] \\ (.2, max] \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ ACC = $\approx$ 68.65\% \end{tabular}} \\
+        \midrule
 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > Lookback(3 timesteps)\end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 938.67 \\ ACC = $\approx$ 22.93\% \end{tabular}} \\
+        \midrule
+        
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > Lookback(5 timesteps)\end{tabular}} &                                                                                            
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Hidden LSTM (50N)\\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 1134.68 \\ ACC = $\approx$ 27\% \end{tabular}} \\
+        \midrule
+                                                                              
+        \bottomrule
+      \end{tabular}
+    \end{table}
+  }
+  
 
-    Donec quis posuere ligula. Nunc feugiat elit a mi malesuada consequat. Sed
-    imperdiet augue ac nibh aliquet tristique. Aenean eu tortor vulputate,
-    eleifend lorem in, dictum urna. Proin auctor ante in augue tincidunt
-    tempor. Proin pellentesque vulputate odio, ac gravida nulla posuere
-    efficitur. Aenean at velit vel dolor blandit molestie. Mauris laoreet
-    commodo quam, non luctus nibh ullamcorper in. Class aptent taciti sociosqu
-    ad litora torquent per conubia nostra, per inceptos himenaeos.
+  \large{
+    \begin{table}
+      \centering
+      \begin{tabular}{l l l l}
+        \toprule
+        \multicolumn{1}{|l|}{\textbf{Model}} & \multicolumn{1}{|l|}{\textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins}} & \multicolumn{1}{|l|}{\textbf{Performance}} \\
+        \midrule
+        
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input RNN (64N)\\ Hidden Dense (4N)\\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (.01, .02]  \\ (.02, .2] \\ (.2, max] \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 691, TN = 0\\ FP = 65, FN = 0 \\ ACC = $\approx$ 91.4\% \end{tabular}} \\
+        \midrule
 
-    Nulla varius finibus volutpat. Mauris molestie lorem tincidunt, iaculis
-    libero at, gravida ante. Phasellus at felis eu neque suscipit suscipit.
-    Integer ullamcorper, dui nec pretium ornare, urna dolor consequat libero,
-    in feugiat elit lorem euismod lacus. Pellentesque sit amet dolor mollis,
-    auctor urna non, tempus sem.
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}} &                                                                                                     
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (.01, .02]  \\ (.02, .2] \\ (.2, max] \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ ACC = $\approx$ 68.65\% \end{tabular}} \\
+        \midrule
+
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > Lookback(3 timesteps)\end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 938.67 \\ ACC = $\approx$ 22.93\% \end{tabular}} \\
+        \midrule
+        
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > Lookback(5 timesteps)\end{tabular}} &                                                                                            
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Hidden LSTM (50N)\\ Output Dense(1N)\end{tabular}} & 
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}} &  
+        \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 1134.68 \\ ACC = $\approx$ 27\% \end{tabular}} \\
+        \midrule
+                                                                              
+        \bottomrule
+      \end{tabular}
+    \end{table}
+  }
+  
+
 
   \end{block}
-  
-\begin{block}{Conclusion}
-
-    Nulla eget sem quam. Ut aliquam volutpat nisi vestibulum convallis. Nunc a
-    lectus et eros facilisis hendrerit eu non urna. Interdum et malesuada fames
-    ac ante \textit{ipsum primis} in faucibus. Etiam sit amet velit eget sem
-    euismod tristique. Praesent enim erat, porta vel mattis sed, pharetra sed
-    ipsum. Morbi commodo condimentum massa, \textit{tempus venenatis} massa
-    hendrerit quis. Maecenas sed porta est. Praesent mollis interdum lectus,
-    sit amet sollicitudin risus tincidunt non.
-
-    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
-    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
-    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
-    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
+    \begin{block} {\LARGE{Conclusion}}
 
     \begin{itemize}
-      \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
-        sed est scelerisque, elementum mollis augue iaculis.
-        \begin{itemize}
-          \item In sed est finibus, vulputate
-            nunc gravida, pulvinar lorem. In maximus nunc dolor, sed auctor eros
-            porttitor quis.
-          \item Fusce ornare dignissim nisi. Nam sit amet risus vel lacus
-            tempor tincidunt eu a arcu.
-          \item Donec rhoncus vestibulum erat, quis aliquam leo
-            gravida egestas.
-        \end{itemize}
-      \item \textbf{Sed luctus, elit sit amet} dictum maximus, diam dolor
-        faucibus purus, sed lobortis justo erat id turpis.
-      \item \textbf{Pellentesque facilisis dolor in leo} bibendum congue.
-        Maecenas congue finibus justo, vitae eleifend urna facilisis at.
+      \large{
+      \item \textbf{Data Collection} 
+      
+      1.  \textcolor{brown}{\textit{Foreground Window IL}} provides the most applicable data for further analysis using EDA, HMM, RNNs \\
+      2. Data should be collected \underline{\textit{continuously}} and \underline{\textit{consistently}} to allow detecting the patterns of user behaviors 
+      \item \textbf{Predictive Tasks} 
+      
+      1. More data -> better predictive results \\
+      2. Feature engineering, input RNN libraries, and hyperparameter tuning greatly influence the model performance \\
+      3. We can use these results to infer the daily sequence of app usage and their use times --> devise solutions to reduce the initial user-CPU latency
+    
+      \item \textbf{Proposed Solutions}
+      
+      Using our predictive results, we can further develop a script to process the background tasks and utilize the \textit{Task Manager} to open the next app 2-3 mins beforehand \\
+      }
+      
     \end{itemize}
-    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
-    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
-    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
-    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
-
-  \end{block}
-
-  \begin{block}{Future Directions}
-......
-
   \end{block}
 
   
-  \begin{block}{References}
+  % \begin{block}{\LARGE{References}}
 
-    \nocite{*}
-    \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
+  %   \nocite{*}
+  %   \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
 
-  \end{block}
+  % \end{block}
 
 \end{column}
 
