@@ -1,17 +1,18 @@
 # Fdb version 4
-["bibtex poster"] 1676743141 "poster.aux" "poster.bbl" "poster" 1676745574 0
+["bibtex poster"] 1676825375 "poster.aux" "poster.bbl" "poster" 1676825572 0
   "./poster.bib" 1676770250 235 6d9f7970dd54b7263028c7c9348909f0 ""
   "c:/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1676732288 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "poster.aux" 1676745571 1175 6b812077eed96f4d1669ee79799f8173 "pdflatex"
+  "poster.aux" 1676825569 1262 e15282930113857221b7ca6e17d05cef "pdflatex"
   (generated)
   "poster.bbl"
   "poster.blg"
   (rewritten before read)
-["pdflatex"] 1676745565 "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" "poster.pdf" "poster" 1676745574 0
+["pdflatex"] 1676825563 "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" "poster.pdf" "poster" 1676825572 0
   "HDSI_Intel.png" 1676770250 83479 78655c79661ea9a9195646cf375cc749 ""
+  "Why_RNN.PNG" 1676825036 177790 458f4d86dd5f50a60e008604b1aa3fef ""
   "beamercolorthemecam.sty" 1676770250 1646 c2aaf0906614aa5db4a696851fba837e ""
   "beamerthemegemini.sty" 1676770250 6726 3b1744dffda098b55e3ae32b8d66ec7a ""
-  "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" 1676745564 14665 c168099dd8a55c4e04001b54501892f8 ""
+  "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" 1676825562 14632 6d68024bf79e02560406ed4c911d13fc ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1676733987 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1676738922 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1676731657 1004 54797486969f23fa377b128694d548df ""
@@ -284,11 +285,13 @@
   "c:/texlive/2022/texmf-dist/web2c/texmf.cnf" 1676731460 40171 cdab547de63d26590bebb3baff566530 ""
   "c:/texlive/2022/texmf-var/web2c/xetex/xelatex.fmt" 1676739167 10497141 3c6177ac03d1c2861e8be79bb1325faf ""
   "c:/texlive/2022/texmf.cnf" 1676738971 713 e69b156964470283e0530f5060668171 ""
-  "poster.aux" 1676745571 1175 6b812077eed96f4d1669ee79799f8173 "pdflatex"
-  "poster.bbl" 1676743142 224 0c88876528be380fa87e30a1f810603c "bibtex poster"
-  "poster.nav" 1676745571 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
-  "poster.out" 1676745569 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "poster.tex" 1676745564 14665 c168099dd8a55c4e04001b54501892f8 ""
+  "foreground_desktopMapper.PNG" 1676823626 379140 f2ce1a1f37381b5b77047ffeb56c0a4c ""
+  "mouse_movement.png" 1676749783 34691 8f3c9dc29380d95567ca6c89e8229420 ""
+  "poster.aux" 1676825569 1262 e15282930113857221b7ca6e17d05cef "pdflatex"
+  "poster.bbl" 1676825376 224 0c88876528be380fa87e30a1f810603c "bibtex poster"
+  "poster.nav" 1676825569 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
+  "poster.out" 1676825567 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "poster.tex" 1676825562 14632 6d68024bf79e02560406ed4c911d13fc ""
   "ucsd_logo.png" 1676770250 93224 8d01c4e8625db1fe14add7731ffb5909 ""
   (generated)
   "poster.aux"

@@ -76,12 +76,12 @@ Solutions to Reducing the Initial User-CPU Latency
 \addtobeamertemplate{headline}{}
 {
     \begin{tikzpicture}[remember picture,overlay]
-      \node [anchor=north west, inner sep=3cm] at ([xshift=0.0cm,yshift=1.75cm]current page.north west)
+      \node [anchor=north west, inner sep=3cm] at ([xshift=0.0cm,yshift=0.75cm]current page.north west)
       {\includegraphics[height=5.5cm]{HDSI_Intel.png}}; 
     \end{tikzpicture}
 
     \begin{tikzpicture}[remember picture,overlay]
-      \node [anchor=north west, inner sep=3cm] at ([xshift=110.0cm,yshift=1.75cm]current page.north west)
+      \node [anchor=north west, inner sep=3cm] at ([xshift=110.0cm,yshift=0.75cm]current page.north west)
       {\includegraphics[height=5.5cm]{ucsd_logo.png}}; 
     \end{tikzpicture}
 }
@@ -122,7 +122,12 @@ Solutions to Reducing the Initial User-CPU Latency
     \end{itemize}
 
     We mainly focus on the data collected from the \textit{Foreground Window IL} for further exploration.
-
+    \begin{figure}
+      \includegraphics[width=0.475 \textwidth, height=11.5cm]{mouse_movement.png}
+        \hspace{\fill}
+        \includegraphics[width=0.475\textwidth, height=11.5cm]{foreground_desktopMapper.PNG}
+      \caption{Mouse Movement, Foreground Window, and Z-axis}\label{fig:xyz}
+    \end{figure}
   \end{alertblock}
 
   \begin{block}{Data Preprocessing}
@@ -211,17 +216,8 @@ Solutions to Reducing the Initial User-CPU Latency
     \heading{Recurrent Neural Network (RNN)}
 
     \begin{itemize}
-       \item \textbf{Problem Statement 1}:
-       \item \textbf{Problem Statement 2}: Predict the use time of an app/tab using the past \textit{time-series} data
-       \item \textbf{Why RNNs?}
-       
-       1. \textbf{A Looping Mechanism} The current prediction is impacted by the former predictions
-
-       2. \textbf{Parameter Sharing} Weight matrices are shared across the timestamps / positions -> internal memory, weighting the importance of data
-       
-       3. \textbf{Gradient Vanishing/Exploding Problem} The parameter update steps become insignificant/significant depending on the gradients
-
-       >> But overall, robust to trends/seasonality/temporal features in noisy data 
+       \item \textbf{Problem Statement}: Predict the (total) time usage of an app/tab/recorded process using the past \textit{time-series} data
+       \begin{figure}\includegraphics[width=0.8\textwidth, height=12cm]{Why_RNN.PNG}\end{figure}
 
        \item \textbf{Feature Engineering}:
        
@@ -229,7 +225,7 @@ Solutions to Reducing the Initial User-CPU Latency
 
        2. \textbf{Example 2}:
        
-       3. \textbf{Example 3}:
+       3. \textbf{Example}:
        
        \item \textbf{Experiments with RNNs}:
        
