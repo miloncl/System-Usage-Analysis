@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  19 FEB 2023 12:46
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  19 FEB 2023 22:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1114,28 +1114,25 @@ File: foreground_desktopMapper.PNG Graphic file (type bmp)
 <foreground_desktopMapper.PNG>
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 320.
+(mdframed)              on input line 310.
 File: time_spent.png Graphic file (type bmp)
 <time_spent.png>
 Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 320.
+ mdframed uses option nobreak mdframed on input line 310.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 320.
-LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 320.
+ mdframed uses option nobreak mdframed on input line 310.
+LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 310.
 File: lstm_1.png Graphic file (type bmp)
 <lstm_1.png>
+File: emission_MT.png Graphic file (type bmp)
+<emission_MT.png>
 
-Overfull \hbox (95.75421pt too wide) in paragraph at lines 320--320
+Overfull \hbox (95.75421pt too wide) in paragraph at lines 310--310
  [] 
  []
 
 
-Overfull \hbox (95.75421pt too wide) in paragraph at lines 320--320
- [] 
- []
-
-
-Overfull \vbox (31.15071pt too high) detected at line 320
+Overfull \vbox (81.78262pt too high) detected at line 310
  []
 
 File: HDSI_Intel.png Graphic file (type bmp)
@@ -1169,10 +1166,10 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39596 strings out of 476688
+ 39599 strings out of 476688
  970293 string characters out of 5807699
- 1950001 words of memory out of 5000000
- 59015 multiletter control sequences out of 15000+600000
+ 1935001 words of memory out of 5000000
+ 59017 multiletter control sequences out of 15000+600000
  541250 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,770b,1143s stack positions out of 10000i,1000n,20000p,200000b,200000s
