@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  5 MAR 2023 17:04
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  5 MAR 2023 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1112,14 +1112,14 @@ File: collect-data.jpeg Graphic file (type bmp)
 <collect-data.jpeg>
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 309.
+(mdframed)              on input line 301.
 File: time-used.jpeg Graphic file (type bmp)
 <time-used.jpeg>
 Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 309.
+ mdframed uses option nobreak mdframed on input line 301.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 309.
-LaTeX Font Info:    Calculating math sizes for size <37> on input line 309.
+ mdframed uses option nobreak mdframed on input line 301.
+LaTeX Font Info:    Calculating math sizes for size <37> on input line 301.
 File: hmm.jpeg Graphic file (type bmp)
 <hmm.jpeg>
 File: lstm-lt.jpeg Graphic file (type bmp)
@@ -1130,23 +1130,24 @@ File: emission-mt.jpeg Graphic file (type bmp)
 <emission-mt.jpeg>
 
 
-c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex:309: LaTeX Error: There's no line here to end.
+c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex:301: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.309 \end{frame}
+l.301 \end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+File: stacked-lstm.jpeg Graphic file (type bmp)
+<stacked-lstm.jpeg>
 File: bi-lstm.jpeg Graphic file (type bmp)
 <bi-lstm.jpeg>
-LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 309.
 
-Overfull \vbox (119.759pt too high) detected at line 309
+Overfull \vbox (26.226pt too high) detected at line 301
  []
 
 File: hdsi-intel.jpeg Graphic file (type bmp)
@@ -1175,11 +1176,11 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39638 strings out of 476688
- 970920 string characters out of 5807699
- 1898001 words of memory out of 5000000
- 59053 multiletter control sequences out of 15000+600000
- 554034 words of font info for 135 fonts, out of 8000000 for 9000
+ 39621 strings out of 476688
+ 970562 string characters out of 5807699
+ 1893001 words of memory out of 5000000
+ 59037 multiletter control sequences out of 15000+600000
+ 541265 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,18n,122p,770b,1142s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

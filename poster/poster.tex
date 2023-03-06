@@ -180,7 +180,7 @@ Solutions to Reducing the Initial User-CPU Latency
                   1. Hourly split daily usage into 24 cols (labeled 0 - 23)\\
                   2. Lookback 3-5 time steps from the current timestamp\\
                   3. One-hot-encoding; Min-Max scaler
-            \item \textbf{Experiments}: Train/Test: 80/20, no shuffle 
+            \item \textbf{Experiments}: Train/Test: 80/20, no shuffle; Keras
 
                   % 1. \textbf{Train/Test}: 80/20, no shuffle\\
                   % 2. \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if within 1 sec of real vals
@@ -227,13 +227,18 @@ Solutions to Reducing the Initial User-CPU Latency
       % \end{figure}
 
       \begin{figure}
-        \includegraphics[width=0.5\textwidth, height=15cm]{transition-mt.jpeg}
+        \includegraphics[width=0.475\textwidth, height=15cm]{transition-mt.jpeg}
         \hspace{\fill}
-        \includegraphics[width=0.5\textwidth, height=15cm]{emission-mt.jpeg}
+        \includegraphics[width=0.48\textwidth, height=15cm]{emission-mt.jpeg}
         \end{figure}
 
         \\
-        
+
+        \begin{figure}
+          \centering{\hspace*{-2cm}\includegraphics[width=0.8\textwidth, height=20cm]{stacked-lstm.jpeg}}
+      \end{figure}
+
+
         \begin{figure}
               \centering{\includegraphics[width=0.98\textwidth, height=20cm]{bi-lstm.jpeg}}
           \end{figure}
@@ -272,27 +277,14 @@ Solutions to Reducing the Initial User-CPU Latency
         % }
       \end{block}
 
-      \begin{block} {\LARGE{Conclusion}}
-
-        \begin{itemize}
-          \large{
-          \item \textbf{Data Collection}
-
-                1.  \textit{Foreground Window IL} provides the most applicable data for further analysis using EDA, HMM, RNNs \\
-                2. Data should be collected \underline{\textit{continuously}} and \underline{\textit{consistently}} to allow detecting the patterns of user behaviors
-          \item \textbf{Predictive Tasks}
-
-                1. More data -> better predictive results \\
-                2. HMM: The accuracy increases as $n$ (the number of apps) increases \\
-                3. RNNs: Feature engineering, input RNN libraries, and hyperparameter tuning greatly influence the model performance \\
-                4. We can use these results to infer the daily sequence of app usage and their use times --> devise solutions to reduce the initial user-CPU latency
-
-          \item \textbf{Proposed Solutions}
-
-                Using our predictive results, we can further develop a script to process the background tasks and utilize the \textit{Task Manager} to open the next app 2-3 mins beforehand \\
-                }
-
-        \end{itemize}
+      \begin{block} {\huge{Conclusions}}     
+        {
+          \fontsize{37pt}{44.4pt} \selectfont
+                % 1.  \textit{Foreground Window} provides the most applicable data for further analysis \\
+                1. Data should be collected \underline{\textit{continuously}} and \underline{\textit{consistently}} to achieve high accuracies in detecting patterns of user behaviors
+                % \\3. Feature engineering, input RNN libraries, and hyperparameter tuning greatly influence the model performance \\
+                \\2. Using these results helps infer the daily sequence of apps and usage time, so we can further develop a script to process the background tasks and utilize the \textit{Task Manager} to open the next app 2-3 mins beforehand \\
+        }
       \end{block}
 
       % \begin{block}{\LARGE{References}}
