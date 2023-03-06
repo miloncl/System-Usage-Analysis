@@ -166,7 +166,7 @@ Solutions to Reducing the Initial User-CPU Latency
             %       {\centering \textcolor{brown}{$P($chrome.exe -> Spotify$)$ =  $P($Spotify | chrome.exe$)$} \par}
             
             
-            \item \textbf{Metrics}: Preds==True if within top $n$ probabilities of the app
+            % \item \textbf{Metrics}: Preds==True if within top $n$ probabilities of the app
           \end{itemize}
 
           \heading{Recurrent Neural Network (LSTM/RNN)}
@@ -184,7 +184,7 @@ Solutions to Reducing the Initial User-CPU Latency
 
                   % 1. \textbf{Train/Test}: 80/20, no shuffle\\
                   % 2. \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if within 1 sec of real vals
-            \item \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if w/in 1 sec
+            % \item \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if w/in 1 sec
 
           \end{itemize} }
       \end{exampleblock}
@@ -198,6 +198,9 @@ Solutions to Reducing the Initial User-CPU Latency
       \begin{block}
         {\huge{Predictive Results}}
 
+        {
+          \fontsize{37pt}{44.4pt} \selectfont \centering{\textbf{HMM Metrics}: Preds==True if within top $n$ probabilities
+        }}
         % \large{
         %   \begin{table}
         %     \centering
@@ -232,7 +235,10 @@ Solutions to Reducing the Initial User-CPU Latency
         \includegraphics[width=0.48\textwidth, height=15cm]{emission-mt.jpeg}
         \end{figure}
 
-        \\
+
+        {
+          \fontsize{37pt}{44.4pt} \selectfont \centering{ \textbf{LSTM Metrics}: RMSE, TP/TN/FP/FN, Preds==True if w/in 1 sec
+          }}
 
         \begin{figure}
           \centering{\hspace*{-2cm}\includegraphics[width=0.8\textwidth, height=20cm]{stacked-lstm.jpeg}}
@@ -240,7 +246,7 @@ Solutions to Reducing the Initial User-CPU Latency
 
 
         \begin{figure}
-              \centering{\includegraphics[width=0.98\textwidth, height=20cm]{bi-lstm.jpeg}}
+              \centering{\includegraphics[width=0.98\textwidth, height=18cm]{bi-lstm.jpeg}}
           \end{figure}
        
         % \large{\textbf{LSTM/RNN Performance}}\vspace*{-\baselineskip}
@@ -280,19 +286,12 @@ Solutions to Reducing the Initial User-CPU Latency
       \begin{block} {\huge{Conclusions}}     
         {
           \fontsize{37pt}{44.4pt} \selectfont
-                % 1.  \textit{Foreground Window} provides the most applicable data for further analysis \\
-                1. Data should be collected \underline{\textit{continuously}} and \underline{\textit{consistently}} to achieve high accuracies in detecting patterns of user behaviors
-                % \\3. Feature engineering, input RNN libraries, and hyperparameter tuning greatly influence the model performance \\
-                \\2. Using these results helps infer the daily sequence of apps and usage time, so we can further develop a script to process the background tasks and utilize the \textit{Task Manager} to open the next app 2-3 mins beforehand \\
+                \begin{itemize} 
+                  \item We should collect data \underline{\textit{continuously}} and \underline{\textit{consistently}} to achieve high accuracies in detecting patterns of user behaviors
+                  \item The results help infer daily app sequence and time usage, so we can develop a script to process background tasks and utilize \textit{Task Manager} to open the next app 2-3 mins beforehand 
+                \end{itemize}
         }
       \end{block}
-
-      % \begin{block}{\LARGE{References}}
-
-      %   \nocite{*}
-      %   \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
-
-      % \end{block}
 
     \end{column}
 
