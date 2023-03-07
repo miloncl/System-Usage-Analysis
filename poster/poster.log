@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  7 MAR 2023 02:55
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  7 MAR 2023 09:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,7 +1076,11 @@ Package hyperref Info: Link coloring OFF on input line 73.
 \@outlinefile=\write5
 \openout5 = `poster.out'.
 
- (c:/texlive/2022/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+(c:/texlive/2022/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (c:/texlive/2022/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
 Dictionary: translator-bibliography-dictionary, Language: English 
@@ -1091,9 +1095,9 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
 
-(./poster.nav)
+No file poster.nav.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 73.
- (c:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
+(c:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 73.
@@ -1108,36 +1112,38 @@ LaTeX Font Info:    External font `cmex7' loaded for size
 (Font)              <6> on input line 73.
 File: user-wait.jpeg Graphic file (type bmp)
 <user-wait.jpeg>
-File: data-collection3.jpeg Graphic file (type bmp)
-<data-collection3.jpeg>
+File: data-collection4.jpeg Graphic file (type bmp)
+<data-collection4.jpeg>
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 299.
+(mdframed)              on input line 293.
 File: time-used.jpeg Graphic file (type bmp)
 <time-used.jpeg>
 Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 299.
+ mdframed uses option nobreak mdframed on input line 293.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 299.
-LaTeX Font Info:    Calculating math sizes for size <37> on input line 299.
+ mdframed uses option nobreak mdframed on input line 293.
+LaTeX Font Info:    Calculating math sizes for size <37> on input line 293.
 File: hmm3.jpeg Graphic file (type bmp)
 <hmm3.jpeg>
 File: lstm-lt.jpeg Graphic file (type bmp)
 <lstm-lt.jpeg>
 File: transition-mt.jpeg Graphic file (type bmp)
 <transition-mt.jpeg>
-File: emission-mt.jpeg Graphic file (type bmp)
-<emission-mt.jpeg>
+File: emission-mt1.jpeg Graphic file (type bmp)
+<emission-mt1.jpeg>
 File: bi-lstm.jpeg Graphic file (type bmp)
 <bi-lstm.jpeg>
-LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 299.
+LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 293.
 
-Overfull \hbox (95.75421pt too wide) in paragraph at lines 299--299
+Overfull \hbox (27.62859pt too wide) in paragraph at lines 293--293
  [] 
  []
 
+File: task_manager.jpeg Graphic file (type bmp)
+<task_manager.jpeg>
 
-Overfull \vbox (43.05724pt too high) detected at line 299
+Overfull \vbox (18.8176pt too high) detected at line 293
  []
 
 File: hdsi-intel.jpeg Graphic file (type bmp)
@@ -1162,15 +1168,18 @@ Overfull \hbox (54.62929pt too wide) has occurred while \output is active
 \openout8 = `poster.snm'.
 
  (./poster.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39659 strings out of 476688
- 971382 string characters out of 5807699
- 1910001 words of memory out of 5000000
- 59075 multiletter control sequences out of 15000+600000
- 554026 words of font info for 134 fonts, out of 8000000 for 9000
+ 39660 strings out of 476688
+ 971563 string characters out of 5807699
+ 1907001 words of memory out of 5000000
+ 59076 multiletter control sequences out of 15000+600000
+ 554034 words of font info for 135 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,770b,1142s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
