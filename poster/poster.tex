@@ -98,8 +98,8 @@ Solutions to Reducing the Initial User-CPU Latency
         {
           \fontsize{37pt}{44.4pt} \selectfont 
           \begin{itemize}
-            \item “Data loading” icons signal unpleasant user-wait experiences and can tear people away from using an app.
-            \item We mitigate the initial latency by collecting system usage data using Intel’s Telemetry and analyzing past behaviors by EDA, HMM, and LSTM/RNN.
+            \item \textbf{Data loading} icons signal an unpleasant user-wait experience and can tear people away from using an app.
+            \item We mitigate the initial latency by collecting system usage data using Intel’s Telemetry and analyzing user-app interaction by EDA, HMM, and LSTM/RNN.
         \end{itemize}
         }
         \begin{figure}\includegraphics[width=0.6\textwidth, height=5cm]{user-wait.jpeg}\end{figure}
@@ -117,7 +117,7 @@ Solutions to Reducing the Initial User-CPU Latency
         }
         
           \begin{figure}
-          \includegraphics[width=0.96 \textwidth, height=20cm]{collect-data.jpeg}
+          \includegraphics[width=0.96 \textwidth, height=20cm]{data-collection3.jpeg}
           
           % \caption{\large{Mouse Movement, Foreground Window, and Z-axis}}\label{fig:xyz}
           \end{figure}
@@ -158,7 +158,7 @@ Solutions to Reducing the Initial User-CPU Latency
 \\
                     {\centering \textcolor{brown}{$P(o_i | q_1, ... q_i , ..., q_T, o_1, ..., o_i, ..., o_T) = P(o_i | q_i)$} \par}
                     
-                    \begin{figure}\includegraphics[width=0.75\textwidth, height=16cm]{hmm.jpeg}\end{figure}
+                    \begin{figure}\includegraphics[width=0.75\textwidth, height=16cm]{hmm3.jpeg}\end{figure}
             % \item \textbf{Transition Matrix}: contains the transition probabilities, e.g. the likelihood of moving from one executable to another \\
             %       {\centering \textcolor{brown}{$P($chrome.exe -> cmd.exe$)$ =  $P($cmd.exe | chrome.exe$)$} \par}
 
@@ -240,47 +240,46 @@ Solutions to Reducing the Initial User-CPU Latency
           \fontsize{37pt}{44.4pt} \selectfont \centering{ \textbf{LSTM Metrics}: RMSE, TP/TN/FP/FN, Preds==True if w/in 1 sec
           }}
 
-        \begin{figure}
-          \centering{\hspace*{-2cm}\includegraphics[width=0.8\textwidth, height=20cm]{stacked-lstm.jpeg}}
+      %   \begin{figure}
+      %     \centering{\hspace*{-2cm}\includegraphics[width=0.8\textwidth, height=20cm]{stacked-lstm.jpeg}}
+      % \end{figure}
+
+      \begin{figure}
+        \centering{\includegraphics[width=0.98\textwidth, height=18cm]{bi-lstm.jpeg}}
       \end{figure}
+      \large{\textbf{LSTM/RNN Performance}}\vspace*{-\baselineskip}
+        \large{
+          \begin{table}
+            \centering
+            \begin{tabular}{l l l l}
+              \toprule
+              \multicolumn{1}{|l|}{\textbf{Model}}                                                                                                         & \multicolumn{1}{|l|}{\textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins/Criteria}} & \multicolumn{1}{|l|}{\textbf{Performance}} \\
+              \midrule
 
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input RNN (64N)\\ Hidden Dense (4N)\\ Output Dense (1N)\end{tabular}}                        &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 691, TN = 0\\ FP = 65, FN = 0 \\ ACC = $\approx$ 91.4\% \end{tabular}}                                                                                                                                                            \\
+              \midrule
 
-        \begin{figure}
-              \centering{\includegraphics[width=0.98\textwidth, height=18cm]{bi-lstm.jpeg}}
-          \end{figure}
-       
-        % \large{\textbf{LSTM/RNN Performance}}\vspace*{-\baselineskip}
-        % \large{
-        %   \begin{table}
-        %     \centering
-        %     \begin{tabular}{l l l l}
-        %       \toprule
-        %       \multicolumn{1}{|l|}{\textbf{Model}}                                                                                                         & \multicolumn{1}{|l|}{\textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins/Criteria}} & \multicolumn{1}{|l|}{\textbf{Performance}} \\
-        %       \midrule
-
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input RNN (64N)\\ Hidden Dense (4N)\\ Output Dense (1N)\end{tabular}}                        &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 691, TN = 0\\ FP = 65, FN = 0 \\ ACC = $\approx$ 91.4\% \end{tabular}}                                                                                                                                                            \\
-        %       \midrule
-
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ Output Dense (1N)\end{tabular}} &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ ACC = $\approx$ 68.65\% \end{tabular}}                                                                                                                                                        \\
-        %       \midrule
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ Output Dense (1N)\end{tabular}} &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ ACC = $\approx$ 68.65\% \end{tabular}}                                                                                                                                                        \\
+              \midrule
 
               
 
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > Lookback(5 timesteps)\end{tabular}}                     &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Hidden LSTM (50N)\\ Output Dense (1N)\end{tabular}}                       &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}}                                          &
-        %       \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 1134.68 \\ ACC = $\approx$ 27\% \end{tabular}}                                                                                                                                                                                 \\
-        %       \midrule
-        %     \end{tabular}
-            % \caption[short]{\large {LSTM/RNN Performance}}
-        %   \end{table}
-        % }
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > Lookback(5 timesteps)\end{tabular}}                     &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Hidden LSTM (50N)\\ Output Dense (1N)\end{tabular}}                       &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}}                                          &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 1134.68 \\ ACC = $\approx$ 27\% \end{tabular}}                                                                                                                                                                                 \\
+              \midrule
+            \end{tabular}
+            \caption[short]{\large {LSTM/RNN Performance}}
+          \end{table}
+        } 
+        
       \end{block}
 
       \begin{block} {\huge{Conclusions}}     
