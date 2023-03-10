@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1678430850 "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" "poster.pdf" "poster" 1678430935 0
+["pdflatex"] 1678432017 "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" "poster.pdf" "poster" 1678432100 0
   "beamercolorthemecam.sty" 1678030134 1701 c2aaf0906614aa5db4a696851fba837e ""
   "beamerthemegemini.sty" 1678030134 6983 3b1744dffda098b55e3ae32b8d66ec7a ""
   "bi-lstm.jpeg" 1678064440 640301 5299a5b6a797da7449be68faf2302105 ""
-  "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" 1678430849 14738 5c7e04bd629cfdabe4bf0ce905f20a19 ""
+  "c:/Users/dang_/source/repos/Dsc180b/poster/poster.tex" 1678432015 14880 1e78c3360b84280b5daae13c86d19e5d ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1676733987 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1676738922 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1676731657 1004 54797486969f23fa377b128694d548df ""
@@ -288,10 +288,10 @@
   "hmm3.jpeg" 1678419502 49053 e46e7f6b87c3f230aacc924bd15c0474 ""
   "lstm-lt.jpeg" 1678061905 192350 5051386542190a9a57dab0e50354e0c3 ""
   "mouse_movement.png" 1678030134 34691 8f3c9dc29380d95567ca6c89e8229420 ""
-  "poster.aux" 1678430856 1115 238d6b5a46e4d46e2681628f1144708a "pdflatex"
-  "poster.nav" 1678430856 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
-  "poster.out" 1678430854 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "poster.tex" 1678430849 14738 5c7e04bd629cfdabe4bf0ce905f20a19 ""
+  "poster.aux" 1678432022 1115 238d6b5a46e4d46e2681628f1144708a "pdflatex"
+  "poster.nav" 1678432022 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
+  "poster.out" 1678432021 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "poster.tex" 1678432015 14880 1e78c3360b84280b5daae13c86d19e5d ""
   "qr_code.jpeg" 1678424627 33948 c60cdbeb418e7b31f37f135e191b4753 ""
   "stacked-lstm.jpeg" 1678065969 69376 7ef44434ca3e1ac122f2dac2c6531173 ""
   "time-used.jpeg" 1678047559 156193 31cc6a9e56472e64c4a14e43d3a1eff9 ""
