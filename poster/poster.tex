@@ -81,6 +81,12 @@ Solutions to Reducing the Initial User-CPU Latency
     {\includegraphics[height=5.5cm]{hdsi-intel.jpeg}};
   \end{tikzpicture}
 
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node [anchor=north west, inner sep=3cm] at ([xshift=103.5cm,yshift=0.75cm]current page.north west)
+    {\includegraphics[height=5.5cm]{qr_code.jpeg}};
+  \end{tikzpicture}
+
   \begin{tikzpicture}[remember picture,overlay]
     \node [anchor=north west, inner sep=3cm] at ([xshift=110.0cm,yshift=0.75cm]current page.north west)
     {\includegraphics[height=5.5cm]{ucsd-logo.jpeg}};
@@ -113,7 +119,7 @@ Solutions to Reducing the Initial User-CPU Latency
           \fontsize{37pt}{44.4pt} \selectfont 
           \begin{itemize}
             \item We apply \textbf{\textit{Intel® Software Development Kit}} and \textbf{\textit{System Usage Report}} framework to anonymously gather data usage from multiple devices
-            \item We mainly focus on the \textbf{\textit{Foreground Window IL}} written using \textbf{\textit{Event-Driven}} programming knowledge for further exploration 
+            \item We develop 4 input libraries, esp. \textit{Foreground Window IL}, using \textbf{\textit{C}} and \textbf{\textit{Event-Driven}} programming knowledge
           \end{itemize}
         }
         
@@ -145,7 +151,7 @@ Solutions to Reducing the Initial User-CPU Latency
       \begin{exampleblock}{\huge{Methodology of Predictive Tasks}}
 
         {
-          \fontsize{37pt}{44.4pt} \selectfont \heading{Hidden Markov Model  (HMM)}
+          \fontsize{37pt}{44.4pt} \selectfont \heading{Hidden Markov Model (HMM)}
 
           \begin{itemize}
             \item \textbf{Problem Statement}: Predict the likelihood of using an app \textit{given} the former sequence of application usage
@@ -175,7 +181,7 @@ Solutions to Reducing the Initial User-CPU Latency
 
           \begin{itemize}
             \item \textbf{Problem Statement}: Predict the (total) time usage of an app/tab/recorded process using the past \textit{time-series} data
-                  \begin{figure}\hspace*{-2cm}\includegraphics[width=0.8\textwidth, height=22cm]{lstm-lt.jpeg}\end{figure}
+                  \begin{figure}\hspace*{-0.8cm}\includegraphics[width=0.8\textwidth, height=22cm]{lstm-lt.jpeg}\end{figure}
 
             \item \textbf{Feature Engineering}:
 
@@ -185,7 +191,7 @@ Solutions to Reducing the Initial User-CPU Latency
             \item \textbf{Experiments}: Train/Test: 80/20, no shuffle; Keras
 
                   % 1. \textbf{Train/Test}: 80/20, no shuffle\\
-                 \item \textbf{Metrics}: TP/TN/FP/FN, Preds==True if w/in 1 sec of real vals
+                 \item \textbf{Metrics}: TP/TN/FP/FN; Preds==True if w/in 1 sec of real vals
             % \item \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if w/in 1 sec
 
           \end{itemize} }
@@ -198,7 +204,7 @@ Solutions to Reducing the Initial User-CPU Latency
     \begin{column}{\colwidth}
 
       \begin{block}
-        {\huge{Predictive Results}}
+        {\hspace*{2cm} \huge{Predictive Results}}
         % \large{
         %   \begin{table}
         %     \centering
@@ -227,6 +233,7 @@ Solutions to Reducing the Initial User-CPU Latency
       %     \centering{\includegraphics[width=0.6\textwidth, height=15cm]{transition-mt.jpeg}}
       % \end{figure}
 
+      \centering {\fontsize{37pt}{44.4pt} \selectfont \hspace*{2cm} \textbf{HMM Performance on Chrome}}
       \begin{figure}
         \includegraphics[width=0.49\textwidth, height=15cm]{transition-mt.jpeg}
         \hspace{\fill}
@@ -237,27 +244,28 @@ Solutions to Reducing the Initial User-CPU Latency
       %     \centering{\hspace*{-2cm}\includegraphics[width=0.8\textwidth, height=20cm]{stacked-lstm.jpeg}}
       % \end{figure}
 
-      \begin{figure}
+      \centering {\fontsize{37pt}{44.4pt} \selectfont \hspace*{3.5cm} \textbf{LSTM Performance on Chrome}}
+      \begin{figure}\hspace*{0.5cm}
         \centering{\includegraphics[width=0.98\textwidth, height=18cm]{bi-lstm.jpeg}}
       \end{figure}
       \vspace*{-\baselineskip}
-        \large{
+        { \fontsize{32pt}{38.4pt} \selectfont
           \begin{table}
-            \centering
+            \centering 
             \begin{tabular}{l l l l}
               \toprule
-              \multicolumn{1}{|l|}{\textbf{Model}}                                                                                                         & \multicolumn{1}{|l|}{\textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins/Criteria}} & \multicolumn{1}{|l|}{\textbf{Performance}} \\
+              \multicolumn{1}{|l|}{\hspace*{2cm}\textbf{Other Models}}                                                                                                         & \multicolumn{1}{|l|}{\hspace*{0.35cm} \textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins}} & \multicolumn{1}{|l|}{\hspace*{0.75cm} \textbf{Performance}} \\
               \midrule
 
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Names)\end{tabular}}                          &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input RNN (64N)\\ Hidden Dense (4N)\\ Output Dense (1N)\end{tabular}}                        &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{1.5cm} [0, 0.01] \\ \hspace*{1.5cm} (0.01, 0.02]  \\ \hspace*{1.5cm} (0.02, 0.2] \\ \hspace*{1.5cm} (0.2, max] \end{tabular}}                            &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 691, TN = 0\\ FP = 65, FN = 0 \\ ACC $\approx$ 91.4\% \end{tabular}}                                                                                                                                                            \\
               \midrule
 
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Names)\end{tabular}}                          &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ Output Dense (1N)\end{tabular}} &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{1.5cm} [0, 0.01] \\ \hspace*{1.5cm} (0.01, 0.02]  \\ \hspace*{1.5cm} (0.02, 0.2] \\ \hspace*{1.5cm} (0.2, max] \end{tabular}}                            &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ ACC $\approx$ 68.65\% \end{tabular}}                                                                                                                                                        \\
               \midrule
 
@@ -269,8 +277,8 @@ Solutions to Reducing the Initial User-CPU Latency
               % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 980 \\ ACC = $\approx$ 55\% \end{tabular}}                                                                                                                                                                                 \\
               % \midrule
             \end{tabular}
-            \caption[short]{\large {LSTM/RNN Performance}}
-          \end{table}
+            % \caption{\LARGE {Other LSTM/RNN Performance}}
+          \end{table}}
           % \centering{\large{\textbf{Table: LSTM/RNN Performance}}}
         
       \end{block}
@@ -280,10 +288,12 @@ Solutions to Reducing the Initial User-CPU Latency
           \fontsize{37pt}{44.4pt} \selectfont
                 \begin{itemize} 
                   \item We should collect data \underline{\textit{continuously}} and \underline{\textit{consistently}} to achieve high accuracies in detecting patterns of user behaviors
-                  \item The results help infer daily app sequence and time usage, so we can develop a script to process background tasks and utilize \textbf{\textit{Task Manager}} to open the next app 2-3 mins beforehand 
+                  \item We wish to incorporate data collected using \textbf{\textit{Desktop Mapper IL}} and check if it helps improve our predictions 
+                  \item The analysis/predictive results allow the inference of daily app sequence and time usage
+                  \item We can develop a script to process background tasks and utilize \textbf{\textit{Scheduler}} to open the next app 2-3 mins beforehand 
                 \end{itemize}
         }
-        \begin{figure}\includegraphics[width=0.3\textwidth, height=6cm]{task_manager.jpeg}\end{figure}
+        % \begin{figure}\includegraphics[width=0t.3\textwidth, height=6cm]{task_manager.jpeg}\end{figure}
       \end{block}
 
     \end{column}

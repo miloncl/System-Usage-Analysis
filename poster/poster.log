@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  7 MAR 2023 09:10
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  9 MAR 2023 22:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1112,14 +1112,14 @@ File: data-collection4.jpeg Graphic file (type bmp)
 <data-collection4.jpeg>
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 293.
+(mdframed)              on input line 303.
 File: time-used.jpeg Graphic file (type bmp)
 <time-used.jpeg>
 Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 293.
+ mdframed uses option nobreak mdframed on input line 303.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 293.
-LaTeX Font Info:    Calculating math sizes for size <37> on input line 293.
+ mdframed uses option nobreak mdframed on input line 303.
+LaTeX Font Info:    Calculating math sizes for size <37> on input line 303.
 File: hmm3.jpeg Graphic file (type bmp)
 <hmm3.jpeg>
 File: lstm-lt.jpeg Graphic file (type bmp)
@@ -1130,20 +1130,20 @@ File: emission-mt1.jpeg Graphic file (type bmp)
 <emission-mt1.jpeg>
 File: bi-lstm.jpeg Graphic file (type bmp)
 <bi-lstm.jpeg>
-LaTeX Font Info:    Calculating math sizes for size <29.86> on input line 293.
+LaTeX Font Info:    Calculating math sizes for size <32> on input line 303.
 
-Overfull \hbox (27.62859pt too wide) in paragraph at lines 293--293
+Overfull \hbox (80.7697pt too wide) in paragraph at lines 303--303
  [] 
  []
 
-File: task_manager.jpeg Graphic file (type bmp)
-<task_manager.jpeg>
 
-Overfull \vbox (18.8176pt too high) detected at line 293
+Overfull \vbox (18.95798pt too high) detected at line 303
  []
 
 File: hdsi-intel.jpeg Graphic file (type bmp)
 <hdsi-intel.jpeg>
+File: qr_code.jpeg Graphic file (type bmp)
+<qr_code.jpeg>
 File: ucsd-logo.jpeg Graphic file (type bmp)
 <ucsd-logo.jpeg>
 
@@ -1168,11 +1168,11 @@ Package rerunfilecheck Info: File `poster.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39669 strings out of 476688
- 971634 string characters out of 5807699
- 1907001 words of memory out of 5000000
- 59083 multiletter control sequences out of 15000+600000
- 554034 words of font info for 135 fonts, out of 8000000 for 9000
+ 39649 strings out of 476688
+ 971138 string characters out of 5807699
+ 1910001 words of memory out of 5000000
+ 59062 multiletter control sequences out of 15000+600000
+ 554057 words of font info for 136 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,19n,122p,770b,1142s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
