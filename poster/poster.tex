@@ -254,18 +254,18 @@ Solutions to Reducing the Initial User-CPU Latency
             \centering 
             \begin{tabular}{l l l l}
               \toprule
-              \multicolumn{1}{|l|}{\hspace*{2cm}\textbf{Other Models}}                                                                                                         & \multicolumn{1}{|l|}{\hspace*{0.35cm} \textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins}} & \multicolumn{1}{|l|}{\hspace*{0.75cm} \textbf{Performance}} \\
+              \multicolumn{1}{|l|}{\hspace*{2cm}\textbf{Other Models}}                                                                                                         & \multicolumn{1}{|l|}{\hspace*{0.3cm} \textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\hspace*{0.4cm} \textbf{Eval Bins}} & \multicolumn{1}{|l|}{\hspace*{0.75cm} \textbf{Performance}} \\
               \midrule
 
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Names)\end{tabular}}                          &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input RNN (64N)\\ Hidden Dense (4N)\\ Output Dense (1N)\end{tabular}}                        &
-              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{1.5cm} [0, 0.01] \\ \hspace*{1.5cm} (0.01, 0.02]  \\ \hspace*{1.5cm} (0.02, 0.2] \\ \hspace*{1.5cm} (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{0.75cm} [0, 0.01] \\ \hspace*{0.75cm} (0.01, 0.02]  \\ \hspace*{0.75cm} (0.02, 0.2] \\ \hspace*{0.75cm} (0.2, max] \end{tabular}}                            &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 691, TN = 0\\ FP = 65, FN = 0 \\ ACC $\approx$ 91.4\% \end{tabular}}                                                                                                                                                            \\
               \midrule
 
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Names)\end{tabular}}                          &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ Output Dense (1N)\end{tabular}} &
-              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{1.5cm} [0, 0.01] \\ \hspace*{1.5cm} (0.01, 0.02]  \\ \hspace*{1.5cm} (0.02, 0.2] \\ \hspace*{1.5cm} (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{0.75cm} [0, 0.01] \\ \hspace*{0.75cm} (0.01, 0.02]  \\ \hspace*{0.75cm} (0.02, 0.2] \\ \hspace*{0.75cm} (0.2, max] \end{tabular}}                            &
               \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ ACC $\approx$ 68.65\% \end{tabular}}                                                                                                                                                        \\
               \midrule
 

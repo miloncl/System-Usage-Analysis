@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  9 MAR 2023 22:40
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.18)  9 MAR 2023 22:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1132,7 +1132,7 @@ File: bi-lstm.jpeg Graphic file (type bmp)
 <bi-lstm.jpeg>
 LaTeX Font Info:    Calculating math sizes for size <32> on input line 303.
 
-Overfull \hbox (80.7697pt too wide) in paragraph at lines 303--303
+Overfull \hbox (59.43013pt too wide) in paragraph at lines 303--303
  [] 
  []
 
