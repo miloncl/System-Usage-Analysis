@@ -40,22 +40,22 @@
 % Title
 % ====================
 
-\title{Discover User-App Interactions \& \\  
+\title{ \Huge{Discover User-App Interactions \& \\  
 Solutions to Reducing the Initial User-CPU Latency
-}
+}}
 
 \author{\LARGE{Thy Nguyen \and Milon Chakkalakal \and Pranav Thaenraj}}
 
-\institute[shortinst]{\large{Advisors: Jamel Tayeb, Bijan Arbab, Sruti Sahani, Oumaima Makhlouk, Praveen Polasam, Chansik Im}}
+\institute[shortinst]{\Large{Advisors: Jamel Tayeb, Bijan Arbab, Sruti Sahani, Oumaima Makhlouk, Praveen Polasam, Chansik Im}}
 
 % ====================
 % Footer (optional)
 % ====================
 
-\footercontent{ \large{
-  https://github.com/miloncl/System-Usage-Analysis \hfill
-  UCSD HDSI - Intel \hfill
-  {\{tcn002,mlonappa,ethaenra\}@ucsd.edu}}}
+% \footercontent{ \large{
+%   https://github.com/miloncl/System-Usage-Analysis \hfill
+%   UCSD HDSI - Intel \hfill
+%   {\{tcn002,mlonappa,ethaenra\}@ucsd.edu}}}
 % (can be left out to remove footer)
 
 % ====================
@@ -78,12 +78,18 @@ Solutions to Reducing the Initial User-CPU Latency
 {
   \begin{tikzpicture}[remember picture,overlay]
     \node [anchor=north west, inner sep=3cm] at ([xshift=0.0cm,yshift=0.75cm]current page.north west)
-    {\includegraphics[height=5.5cm]{HDSI_Intel.png}};
+    {\includegraphics[height=5.5cm]{hdsi-intel.jpeg}};
+  \end{tikzpicture}
+
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node [anchor=north west, inner sep=3cm] at ([xshift=103.5cm,yshift=0.75cm]current page.north west)
+    {\includegraphics[height=5.5cm]{qr_code.jpeg}};
   \end{tikzpicture}
 
   \begin{tikzpicture}[remember picture,overlay]
     \node [anchor=north west, inner sep=3cm] at ([xshift=110.0cm,yshift=0.75cm]current page.north west)
-    {\includegraphics[height=5.5cm]{ucsd_logo.png}};
+    {\includegraphics[height=5.5cm]{ucsd-logo.jpeg}};
   \end{tikzpicture}
 }
 
@@ -93,52 +99,44 @@ Solutions to Reducing the Initial User-CPU Latency
 
     \begin{column}{\colwidth}
 
-      \begin{block}{\LARGE{Abstract}}
+      \begin{block}{\huge{Abstract}}
 
-        \large{
-          “Data loading” icons signal an unpleasant user-wait experience and can tear people away from using an app.
-          This problem adversely affects the user experience, but limited research has been done, so
-          we perform a study to collect user-app interaction data, analyze past behaviors to understand the user-wait events,
-          and propose solutions to reduce such waiting times.
-          Our study includes 2 phases: collecting data using Intel’s XLSDK and analyzing data using EDA, HMM, and LSTM/RNN.}
-
-        \begin{figure}\includegraphics[width=0.6\textwidth, height=5cm]{user_wait.png}\end{figure}
+        {
+          \fontsize{37pt}{44.4pt} \selectfont 
+          \begin{itemize}
+            \item \textbf{Data loading} icons signal an unpleasant \textit{user-wait experience}
+            \item To mitigate the initial latency, we analyze user-app interaction data collected by \textit{Intel's Telemetry},
+            make predictions on said data using \textit{EDA, HMM, \& LSTM/RNN}, then propose solutions
+        \end{itemize}
+        }
+        \begin{figure}\includegraphics[width=0.6\textwidth, height=5cm]{user-wait.jpeg}\end{figure}
 
       \end{block}
 
-      \begin{alertblock}{\LARGE{Methodology of Data Collection}}
+      \begin{alertblock}{\huge{Methodology of Data Collection}}
 
-        \large{We write the \textbf{\textit{input libraries (ILs)}} using the  software development kit \textbf{\textit{XLSDK}}, along with the \textbf{\textit{Environment Server (ESRV)}}  toolchain  and the \textit{ \textbf{Intel® System Usage Report  (SUR)}} framework to anonymously gather and analyze data usage from multiple devices. The ILs include:
-
+        {
+          \fontsize{37pt}{44.4pt} \selectfont 
           \begin{itemize}
-            \item \textbf{Mouse Input IL}: capture the (X, Y) positions of the mouse in pixels (+/- noise)
-
-            \item \textbf{User Wait IL}: retrieve the cursor type (e.g. loading or working smoothly) and its timestamps
-
-            \item \textbf{Mouse Hook IL}: track the UI objects clicked by the mouse
-
-            \item \textbf{Foreground Window IL}: log the window's details detected by mouse clicks or time ticks
-
-            \item \textbf{Desktop Mapper IL}: map all the open app windows in the z-order and store the relative position of an app on the screen as well as their individual size
-
+            \item We apply \textbf{\textit{Intel® Software Development Kit}} and \textbf{\textit{System Usage Report}} framework to anonymously gather data usage from multiple devices
+            \item We develop 4 input libraries, esp. \textit{Foreground Window IL}, using \textbf{\textit{C}} and \textbf{\textit{Event-Driven}} programming knowledge
           \end{itemize}
-
-          We mainly focus on the data collected from the \textit{Foreground Window IL} for further exploration. }
-        \begin{figure}
-          \includegraphics[width=0.475 \textwidth, height=11.5cm]{mouse_movement.png}
-          \hspace{\fill}
-          \includegraphics[width=0.475\textwidth, height=11.5cm]{foreground_desktopMapper.PNG}
+        }
+        
+          \begin{figure}
+          \includegraphics[width=0.96 \textwidth, height=20cm]{data-collection4.jpeg}
+          
           % \caption{\large{Mouse Movement, Foreground Window, and Z-axis}}\label{fig:xyz}
-        \end{figure}
+          \end{figure}
       \end{alertblock}
 
-      \begin{block}{\LARGE{Exploratory Data Analysis}}
+      \begin{block}{\huge{Exploratory Data Analysis}}
 
-        \large {Chrome is the top frequently used app of this user according to the time measurement in 01/2023}
+        \centering{{\fontsize{37pt}{44.4pt} \selectfont Chrome is the top frequently-used app in 01/2023}}
 
         \begin{figure}
           \begin{mdframed}[backgroundcolor=gray!5,linecolor=gray!10]
-            \centering{\includegraphics[width=0.96\textwidth, height=15cm]{time_spent.png}}
+            \centering{\hspace*{-2cm}\includegraphics[width=0.85\textwidth, height=18cm]{time-used.jpeg}}
           \end{mdframed}
         \end{figure}
 
@@ -150,51 +148,51 @@ Solutions to Reducing the Initial User-CPU Latency
 
     \begin{column}{\colwidth}
 
-      \begin{exampleblock}{\LARGE{Methodology of Predictive Tasks}}
+      \begin{exampleblock}{\huge{Methodology of Predictive Tasks}}
 
-        \large{\heading{Hidden Markov Model  (HMM)}
+        {
+          \fontsize{37pt}{44.4pt} \selectfont \heading{Hidden Markov Model (HMM)}
 
           \begin{itemize}
             \item \textbf{Problem Statement}: Predict the likelihood of using an app \textit{given} the former sequence of application usage
-            \item \textbf{Basic Idea}: Utilize the conditional probability $P(A|B) = \frac{P(A\cap B)}{P(B)}$
-            \item \textbf{HMM Assumptions}:
+            \item \textbf{Basic Idea}: Utilize conditional probability $P(A|B) = \frac{P(A\cap B)}{P(B)}$
+            % \item \textbf{HMM Assumptions}:
 
-                  1. \textbf{Markov Chain}: Only the \underline{\textit{current}} state plays the most crucial role in predicting the future in the sequence; other states before that will not influence the future states
-\\
+            \item \textbf{A1 Markov Chain}: Only the \underline{\textit{current}} state $q_{i-1}$ plays the most crucial role in predicting the future in the sequence \\
                   {\centering \textcolor{brown}{$P(q_i = a | q_1q_2...q_{i-1}) = P(q_i= a | q_{i-1})$} \par}
 
-                  where $q_k$ are the states for $k \in \{1, 2, ..., i\}$, e.g. a hidden state \textit{chrome.exe}
-
-                  2. \textbf{Output Independence}: The probability of observing an event $o_i$ only relies on the state $q_i$ that \underline{\textit{directly}} produced $o_i$.
+            \item \textbf{A2 Output Independence}: The probability of observing an event $o_i$ only relies on the state $q_i$ that \underline{\textit{directly}} produced $o_i$
 \\
                     {\centering \textcolor{brown}{$P(o_i | q_1, ... q_i , ..., q_T, o_1, ..., o_i, ..., o_T) = P(o_i | q_i)$} \par}
+                    
+                    \begin{figure}\includegraphics[width=0.75\textwidth, height=16cm]{hmm3.jpeg}\end{figure}
+            % \item \textbf{Transition Matrix}: contains the transition probabilities, e.g. the likelihood of moving from one executable to another \\
+            %       {\centering \textcolor{brown}{$P($chrome.exe -> cmd.exe$)$ =  $P($cmd.exe | chrome.exe$)$} \par}
 
-                  where $o_1o_2...o_T$ is a sequence of T observations and $q_1, q_2 , ...,q_T$ are T states
-
-            \item \textbf{Transition Matrix}: contains the transition probabilities, i.e. the likelihood of moving from one `.exe' to another `.exe'. \\
-                  {\centering \textcolor{brown}{$P($`chrome.exe' -> `explorer.exe'$)$ =  $P($`explorer.exe' | `chrome.exe'$)$} \par}
-
-            \item \textbf{Emission Matrix}: contains the emission probabilities, i.e. the likelihood of moving from one executable file to another app/tab.\\
-                  {\centering \textcolor{brown}{$P($`chrome.exe' -> `Spotify'$)$ =  $P($`Spotify' | `chrome.exe'$)$} \par}
-            \item \textbf{Metrics}: The accuracy is calculated based on whether the prediction falls under the top $n$ probabilities of the app.
+            % \item \textbf{Emission Matrix}: contains the emission probabilities, e.g. the likelihood of moving from one executable to another app/tab\\
+            %       {\centering \textcolor{brown}{$P($chrome.exe -> Spotify$)$ =  $P($Spotify | chrome.exe$)$} \par}
+            
+            
+           \item \textbf{Metrics}: Preds==True if within top $n$ probabilities of the app
+            
           \end{itemize}
 
           \heading{Recurrent Neural Network (LSTM/RNN)}
 
           \begin{itemize}
             \item \textbf{Problem Statement}: Predict the (total) time usage of an app/tab/recorded process using the past \textit{time-series} data
-                  \begin{figure}\includegraphics[width=0.95\textwidth, height=25cm]{lstm_1.png}\end{figure}
+                  \begin{figure}\hspace*{-0.8cm}\includegraphics[width=0.8\textwidth, height=22cm]{lstm-lt.jpeg}\end{figure}
 
             \item \textbf{Feature Engineering}:
 
-                  1. Use time per day - split hourly between 24 columns (labeled 0 - 23)\\
+                  1. Hourly split daily usage into 24 cols (labeled 0 - 23)\\
                   2. Lookback 3-5 time steps from the current timestamp\\
-                  3. One-hot-encoding (process names or weekdays); np.sin-encoding (hours)
+                  3. One-hot-encoding (process names); Min-Max scaler
+            \item \textbf{Experiments}: Train/Test: 80/20, no shuffle; Keras
 
-            \item \textbf{Experiments}: implemented by \textit{Keras/Tensorflow}
-
-                  1. \textbf{Train/Test}: 80/20, no shuffle\\
-                  2. \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if within 3 mins of real vals
+                  % 1. \textbf{Train/Test}: 80/20, no shuffle\\
+                 \item \textbf{Metrics}: TP/TN/FP/FN; Preds==True if w/in 1 sec of real vals
+            % \item \textbf{Metrics}: RMSE, TP/TN/FP/FN, Preds==True if w/in 1 sec
 
           \end{itemize} }
       \end{exampleblock}
@@ -206,8 +204,7 @@ Solutions to Reducing the Initial User-CPU Latency
     \begin{column}{\colwidth}
 
       \begin{block}
-        {\LARGE{Predictive Results}}
-
+        {\hspace*{2cm} \huge{Predictive Results}}
         % \large{
         %   \begin{table}
         %     \centering
@@ -224,84 +221,80 @@ Solutions to Reducing the Initial User-CPU Latency
         %     \caption[short]{\large {HMM Transition Matrix Performance}}
         %   \end{table}
         % }
-        \large {\textbf{Transition Matrix Results}}\\
-        1. $n$ = 1,  $\>$  ACC (User 1) = 47.5\%, $\>$ACC (User 2) = 40.1\%\\
-        2. $n$ = 2,  $\>$  ACC (User 1) = 63.9\%, $\>$ACC (User 2) = 57.5\%\\
-        3. $n$ = 5,  $\>$  ACC (User 1) = 84.3\%, $\>$ACC (User 2) = 80.0\%\\
-        4. $n$ = 10, $\>$ACC (User 1) = 95.7\%, $\>$ACC (User 2) = 92.6\%\\
-        5. $n$ = 15, $\>$ACC (User 1) = 98.8\%, $\>$ACC (User 2) = 96.6\%\\
-        \large {\textbf{Emission Matrix Results}}: Example: $P(``app" | ``chrome.exe")$
-        \begin{figure}
-            \centering{\includegraphics[width=0.96\textwidth, height=15cm]{emission_MT.png}}
+
+        % \large {\textbf{Transition Matrix Results}}\\
+        % 1. $n$ = 1,  $\>$  ACC (User 1) = 47.5\%, $\>$ACC (User 2) = 40.1\%\\
+        % 2. $n$ = 2,  $\>$  ACC (User 1) = 63.9\%, $\>$ACC (User 2) = 57.5\%\\
+        % 3. $n$ = 5,  $\>$  ACC (User 1) = 84.3\%, $\>$ACC (User 2) = 80.0\%\\
+        % 4. $n$ = 10, $\>$ACC (User 1) = 95.7\%, $\>$ACC (User 2) = 92.6\%\\
+        % 5. $n$ = 15, $\>$ACC (User 1) = 98.8\%, $\>$ACC (User 2) = 96.6\%\\
+
+      %   \begin{figure}
+      %     \centering{\includegraphics[width=0.6\textwidth, height=15cm]{transition-mt.jpeg}}
+      % \end{figure}
+
+      \centering {\fontsize{37pt}{44.4pt} \selectfont \hspace*{2cm} \textbf{HMM Performance on Chrome}}
+      \begin{figure}
+        \includegraphics[width=0.49\textwidth, height=15cm]{transition-mt.jpeg}
+        \hspace{\fill}
+        \includegraphics[width=0.48\textwidth, height=15cm]{emission-mt1.jpeg}
         \end{figure}
 
-        \large{\textbf{LSTM/RNN Performance}}\vspace*{-\baselineskip}
-        \large{
+      %   \begin{figure}
+      %     \centering{\hspace*{-2cm}\includegraphics[width=0.8\textwidth, height=20cm]{stacked-lstm.jpeg}}
+      % \end{figure}
+
+      \centering {\fontsize{37pt}{44.4pt} \selectfont \hspace*{3.5cm} \textbf{LSTM Performance on Chrome}}
+      \begin{figure}\hspace*{0.5cm}
+        \centering{\includegraphics[width=0.98\textwidth, height=18cm]{bi-lstm.jpeg}}
+      \end{figure}
+      \vspace*{-\baselineskip}
+        { \fontsize{32pt}{38.4pt} \selectfont
           \begin{table}
-            \centering
+            \centering 
             \begin{tabular}{l l l l}
               \toprule
-              \multicolumn{1}{|l|}{\textbf{Model}}                                                                                                         & \multicolumn{1}{|l|}{\textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\textbf{Eval Bins/Criteria}} & \multicolumn{1}{|l|}{\textbf{Performance}} \\
+              \multicolumn{1}{|l|}{\hspace*{2cm}\textbf{Other Models}}                                                                                                         & \multicolumn{1}{|l|}{\hspace*{0.3cm} \textbf{Design (N=nodes)}} & \multicolumn{1}{|l|}{\hspace*{0.5cm} \textbf{Eval Bins}} & \multicolumn{1}{|l|}{\hspace*{0.75cm} \textbf{Performance}} \\
               \midrule
 
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input RNN (64N)\\ Hidden Dense (4N)\\ Output Dense (1N)\end{tabular}}                        &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 691, TN = 0\\ FP = 65, FN = 0 \\ ACC = $\approx$ 91.4\% \end{tabular}}                                                                                                                                                            \\
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > OH(Process Names)\end{tabular}}                          &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}\hspace*{0.45cm}Input RNN (64N)\\ \hspace*{0.1cm} Hidden Dense (4N)\\ \hspace*{0.1cm} Output Dense (1N)\end{tabular}}                        &
+              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{0.75cm} [0, 0.01] \\ \hspace*{0.1cm} (0.01, 0.02]  \\ \hspace*{0.45cm} (0.02, 0.2] \\ \hspace*{0.70cm} (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}\hspace*{0.1cm} TP = 691, TN = 0\\ \hspace*{0.1cm} FP = 65, FN = 0 \\ \hspace*{0.5cm} ACC $\approx$ 91.4\% \end{tabular}}                                                                                                                                                            \\
               \midrule
 
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Name)\end{tabular}}                          &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ Output Dense (1N)\end{tabular}} &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}[0, 0.01] \\ (0.01, 0.02]  \\ (0.02, 0.2] \\ (0.2, max] \end{tabular}}                            &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ ACC = $\approx$ 68.65\% \end{tabular}}                                                                                                                                                        \\
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > OH(Process Names)\end{tabular}}                          &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}\hspace*{0.24cm}Input LSTM (16N)\\ Hidden LSTM (32N)\\ Hidden Dense (64N) \\ \hspace*{0.15cm}Output Dense (1N)\end{tabular}} &
+              \multicolumn{1}{|l|}{\centering \begin{tabular}[c]{@{}l@{}} \hspace*{0.75cm} [0, 0.01] \\ \hspace*{0.1cm} (0.01, 0.02]  \\ \hspace*{0.45cm} (0.02, 0.2] \\ \hspace*{0.70cm} (0.2, max] \end{tabular}}                            &
+              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}TP = 467, TN = 52\\ FP = 13, FN = 224 \\ \hspace*{0.3cm} ACC $\approx$ 68.65\% \end{tabular}}                                                                                                                                                        \\
               \midrule
 
-              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Vanilla LSTM \\  > Split Hourly \\ > Lookback(3 timesteps)\end{tabular}}                     &
-              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Output Dense (1N)\end{tabular}}                                           &
-              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}}                                          &
-              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 938.67 \\ ACC = $\approx$ 22.93\% \end{tabular}}                                                                                                                                                                               \\
+              
+
+              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > Lookback(5 timesteps)\end{tabular}}                     &
+              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Hidden LSTM (50N)\\ Output Dense (1N)\end{tabular}}                       &
+              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 1sec \end{tabular}}                                          &
+              % \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 980 \\ ACC = $\approx$ 55\% \end{tabular}}                                                                                                                                                                                 \\
               % \midrule
-
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Stacked LSTM \\  > Split Hourly \\ > Lookback(5 timesteps)\end{tabular}}                     &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Input LSTM (50N)\\ Hidden LSTM (50N)\\ Output Dense (1N)\end{tabular}}                       &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Preds==True \\ if abs(diff) <= 3mins \end{tabular}}                                          &
-              \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}} RMSE = 1134.68 \\ ACC = $\approx$ 27\% \end{tabular}}                                                                                                                                                                                 \\
-              \midrule
             \end{tabular}
-            % \caption[short]{\large {LSTM/RNN Performance}}
-          \end{table}
+            % \caption{\LARGE {Other LSTM/RNN Performance}}
+          \end{table}}
+          % \centering{\large{\textbf{Table: LSTM/RNN Performance}}}
+        
+      \end{block}
+
+      \begin{block} {\huge{Conclusions}}     
+        {
+          \fontsize{37pt}{44.4pt} \selectfont
+                \begin{itemize} 
+                  \item We should collect data \underline{\textit{continuously}} and \underline{\textit{consistently}} to achieve high accuracies in detecting patterns of user behaviors
+                  \item We wish to incorporate data collected using \textbf{\textit{Desktop Mapper IL}} and check if it helps improve our predictions 
+                  \item The analysis/predictive results allow the inference of daily app sequence and time usage
+                  \item We can develop a script to process background tasks and utilize \textbf{\textit{Scheduler}} to open the next app 2-3 mins beforehand 
+                \end{itemize}
         }
+        % \begin{figure}\includegraphics[width=0t.3\textwidth, height=6cm]{task_manager.jpeg}\end{figure}
       \end{block}
-
-      \begin{block} {\LARGE{Conclusion}}
-
-        \begin{itemize}
-          \large{
-          \item \textbf{Data Collection}
-
-                1.  \textit{Foreground Window IL} provides the most applicable data for further analysis using EDA, HMM, RNNs \\
-                2. Data should be collected \underline{\textit{continuously}} and \underline{\textit{consistently}} to allow detecting the patterns of user behaviors
-          \item \textbf{Predictive Tasks}
-
-                1. More data -> better predictive results \\
-                2. HMM: The accuracy increases as $n$ (the number of apps) increases \\
-                3. RNNs: Feature engineering, input RNN libraries, and hyperparameter tuning greatly influence the model performance \\
-                4. We can use these results to infer the daily sequence of app usage and their use times --> devise solutions to reduce the initial user-CPU latency
-
-          \item \textbf{Proposed Solutions}
-
-                Using our predictive results, we can further develop a script to process the background tasks and utilize the \textit{Task Manager} to open the next app 2-3 mins beforehand \\
-                }
-
-        \end{itemize}
-      \end{block}
-
-      % \begin{block}{\LARGE{References}}
-
-      %   \nocite{*}
-      %   \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
-
-      % \end{block}
 
     \end{column}
 
