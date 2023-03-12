@@ -111,3 +111,6 @@ def hmm_transition_mt(df, n=1, save_output=True):
         save_to_file(matrix, "outputs/HMM/transition_mt_checkpoint", outfile_ext = 'txt')
     print(accuracy)
     return matrix, accuracy
+
+def hmm_emission_mt(df, n=1, save_output=True):
+    return None
