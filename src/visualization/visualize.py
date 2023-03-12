@@ -8,19 +8,19 @@ def basic_stats(df, schema, all_time_df):
     print('\nCheck Data Types\n', df.dtypes)
 
     df = df.sort_values(by = ['MEASUREMENT_TIME'], ignore_index = True)
-    print("\nCurrently, the data we have is collected from", df['MEASUREMENT_TIME'].min(), "to", df['MEASUREMENT_TIME'].max())
+    print("\nCurrently, we have data collected from", df['MEASUREMENT_TIME'].min(), "to", df['MEASUREMENT_TIME'].max())
     print("Number of rows in total: " + str(df.shape[0]))
     print("Number of unique data points (based on the unique mouse clicks): " + str(df.shape[0] / 12) )
 
     unique_apps = df[df.ID_INPUT == 4].VALUE.unique()
     print("\nSome of the unique apps", unique_apps[:5])
-    print("There are", len(unique_apps), "in total")
+    print("There are", len(unique_apps), "unique apps in total")
 
     total_times = all_time_df.groupby('VALUE')['Time_Used'].sum().sort_values(ascending = False)
     print("\nSome Total Usage Time\n", total_times[:5])
 
-def some_viz(df, all_time_df):
-    """Some visualizations"""
+def some_bar_charts(df, all_time_df):
+    """Some bar chart visualizations"""
     # first graph
     plot = df[df['ID_INPUT'] == 4]['VALUE'].value_counts()[:5].plot.barh(x = 'index', y = 'VALUE')
     plot.set_axisbelow(True)
@@ -32,23 +32,6 @@ def some_viz(df, all_time_df):
     plt.pyplot.show()
 
     # second graph
-    print("Apps vs Time Used")
-    total_times = all_time_df.groupby('VALUE')['Time_Used'].sum().sort_values(ascending = False)
-    top_10_apps = all_time_df[all_time_df['VALUE'].isin(total_times[:10].index)]
-    top_10_apps.plot.scatter(y = 'VALUE', x = 'Time_Used')
-
-    # third graph
-    all_time_df['Hour'] = all_time_df['MEASUREMENT_TIME'].dt.hour
-    time_spent = all_time_df.groupby('VALUE')['Time_Used'].sum().sort_values(ascending = False)
-    print("Plot top 5 apps with the most time spent on for the whole DataFrame")
-    plot = time_spent[:5].plot.barh(color = '#3D8C40')
-    plot.set_axisbelow(True)
-    plot.set_xlabel('Use Time (in hours)')
-    plot.set_ylabel('Application')
-    plot.set_title('Top Used Apps')
-    plot.invert_yaxis()
-
-    # fourth graph
     if False:
         print("Top 5 apps per day for the User")
         all_time_df= all_time_df.assign(Date = all_time_df['MEASUREMENT_TIME'].apply(lambda x: x.strftime("%Y-%m-%d")))
@@ -63,7 +46,8 @@ def some_viz(df, all_time_df):
             plt.pyplot.title(f'{key}')
             plt.pyplot.show()
     
-    # fifth graph
+    # third graph(s)
+    print("Apps vs Time Used (in secs) During a Week")
     all_time_df['Day'] = all_time_df['MEASUREMENT_TIME'].dt.day_name()
     time_per_day = all_time_df.groupby("Day").apply(lambda x: x.groupby("VALUE")["Time_Used"].sum()).sort_values(ascending = False)
     val = pd.DataFrame(time_per_day).reset_index(level=1, inplace=False)
@@ -74,5 +58,25 @@ def some_viz(df, all_time_df):
         item = item.head(5)
         plt.pyplot.barh(item['VALUE'], item['Time_Used'])
         plt.pyplot.title(f'{key}')
+        #plt.xlabel('Use Time (in secs)')
+        #plt.ylabel('Application')
         plt.pyplot.show()
+    
+    # fourth graph
+    print("Plot top 5 apps with the most time spent on for the whole DataFrame")
+    all_time_df['Hour'] = all_time_df['MEASUREMENT_TIME'].dt.hour
+    time_spent = all_time_df.groupby('VALUE')['Time_Used'].sum().sort_values(ascending = False)
+    plot1 = time_spent[:5].plot.barh(color = '#3D8C40')
+    plot1.set_axisbelow(True)
+    plot1.set_xlabel('Use Time (in secs)')
+    plot1.set_ylabel('Application')
+    plot1.set_title('Top Used Apps')
+    plot1.invert_yaxis()
 
+def scatter_plot(df, all_time_df):
+    """Scatter Plot the data"""
+    print("Apps vs Time Used")
+    total_times = all_time_df.groupby('VALUE')['Time_Used'].sum().sort_values(ascending = False)
+    top_10_apps = all_time_df[all_time_df['VALUE'].isin(total_times[:10].index)]
+    top_10_apps.plot.scatter(y = 'VALUE', x = 'Time_Used')
+    #plt.ylabel('Apps')
