@@ -10,7 +10,7 @@ def basic_stats(df, schema, all_time_df):
     df = df.sort_values(by = ['MEASUREMENT_TIME'], ignore_index = True)
     print("\nCurrently, we have data collected from", df['MEASUREMENT_TIME'].min(), "to", df['MEASUREMENT_TIME'].max())
     print("Number of rows in total: " + str(df.shape[0]))
-    print("Number of unique data points (based on the unique mouse clicks): " + str(df.shape[0] / 12) )
+    print("Number of unique data points (based on the unique mouse clicks): " + str(df.shape[0] // 12) )
 
     unique_apps = df[df.ID_INPUT == 4].VALUE.unique()
     print("\nSome of the unique apps", unique_apps[:5])
