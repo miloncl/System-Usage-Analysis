@@ -1,7 +1,8 @@
-# DSC 180B - Intel & UCSD HDSI - Data Science Capstone Project
+# Intel & UCSD HDSI -- Data Science Capstone Project -- 2022-2023
 
 ## Introduction
 - Hello everyone, we are Thy Nguyen, Milon Chakkalakal, and Pranav Thaenraj
+- Our project mentors are Jamel Tayeb, Bijan Arbab, Scruti Sahani, Oumaima Makhlouk, Praveen Polasam, and Chansik Im 
 - Our capstone project is "Discover User-App Interactions and Solutions to Reducing the Initial User-CPU Latency"
 - This is our Github repo including all the source codes and data files to do the analysis
 
