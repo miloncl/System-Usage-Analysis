@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from collections import defaultdict
 
-def hmm_model(df):
+def hmm_transition_mt(df, n=1, save_output=True):
     """HMM Model with Transition Matrix"""
 
     def get_clean_data(df):
@@ -106,6 +106,8 @@ def hmm_model(df):
         out = outfile_name + '.' + outfile_ext
         matrix.to_csv(out, index=True)
     
-    matrix, accuracy = predict_HMM(df, n=1, rand_state=20)
-    save_to_file(matrix, "outputs/HMM/transition_mt_checkpoint", outfile_ext = 'txt')
+    matrix, accuracy = predict_HMM(df, n=n, rand_state=20)
+    if save_output:
+        save_to_file(matrix, "outputs/HMM/transition_mt_checkpoint", outfile_ext = 'txt')
     print(accuracy)
+    return matrix, accuracy

@@ -6,8 +6,8 @@ import json
 sys.path.insert(0, 'src/data')
 sys.path.insert(0, 'src/models')
 
-from make_dataset import get_data
-from hmm_model import hmm_model
+from make_dataset import *
+from hmm_model import *
 
 def main(targets):
     '''
@@ -33,7 +33,7 @@ def main(targets):
             print('No available data')
             return
 
-        hmm_model(df)
+        hmm_transition_mt(df)
 
 if __name__ == '__main__':
 
