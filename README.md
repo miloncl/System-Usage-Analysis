@@ -67,7 +67,7 @@ Project
 
 ### Week 3:
 - Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/weekly_presentation/%5BDSC%20180B%5D%20-%20Quarter%202%20Week%203.pdf">HMM: Transition Matrix, Model Accuracy, and Emission Matrix</a>
-- Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/notebooks/HMM.ipynb">HMM.ipynb</a>
+- Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/notebooks/HMM.ipynb">HMM.ipynb</a>,  <a href=https://github.com/miloncl/System-Usage-Analysis/blob/main/src/models/hmm_model.py>hmm_model.py</a>
 - Outputs: <a href="https://github.com/miloncl/System-Usage-Analysis/tree/main/outputs/HMM">HMM outfiles</a>
 
 ### Week 4:
