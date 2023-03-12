@@ -1,2 +1,7 @@
-For reproducing the analysis environment, e.g.
-generated with `pip freeze > requirements.txt`
+- To re-create the Foreground Window Input Library
+    - Visual Studio 2019 – Community Version (Latest - https://urldefense.com/v3/__https://visualstudio.microsoft.com/downloads/__;!!Mih3wA!HSvckShoev5plkSIabGSmB1SGaYuOeDSVD0P0BG5EMErex8sdzuB64LeNZmMqx9vvsW9pneOTdJDpLxF$  )
+    - Excel or compatible SW to open CSV (example: https://urldefense.com/v3/__https://www.libreoffice.org/discover/calc/__;!!Mih3wA!HSvckShoev5plkSIabGSmB1SGaYuOeDSVD0P0BG5EMErex8sdzuB64LeNZmMqx9vvsW9pneOTW6D6Z8D$  )
+	- DB Browser for SQLite Version 3.12.2 (or later - https://urldefense.com/v3/__https://sqlitebrowser.org/__;!!Mih3wA!HSvckShoev5plkSIabGSmB1SGaYuOeDSVD0P0BG5EMErex8sdzuB64LeNZmMqx9vvsW9pneOTaSR2yZE$  )
+    - Intel's Software Development Kit (XLSDK) User Guide and System Usage Report (SUR) framework 
+- To re-create the data analysis
+    - Python (Version 3.7 or later)

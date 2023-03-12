@@ -68,3 +68,7 @@ Project
 ### Week 5:
 - Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/weekly_presentation/%5BDSC%20180B%5D%20-%20Quarter%202%20Week%205.pdf">RNN (Vanilla + LSTM)</a>
 - Source Code:
+
+### Week 6:
+- Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/weekly_presentation/%5BDSC%20180B%5D%20%20-%20Quarter%202%20Week%206.pdf">LSTM Experiments</a>
+- Source Code:
