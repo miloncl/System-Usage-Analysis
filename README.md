@@ -1,6 +1,8 @@
 # DSC 180B - Intel & UCSD HDSI - Data Science Capstone Project
 
 ## Introduction
+- Hello everyone, we are Thy Nguyen, Milon Chakkalakal, and Pranav Thaenraj
+- Our capstone project is "Discover User-App Interactions and Solutions to Reducing the Initial User-CPU Latency"
 - This is our Github repo including all the source codes and data files to do the analysis
 
 ## Overview
