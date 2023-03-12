@@ -1,10 +1,11 @@
-# DSC 180B
+# DSC 180B - Intel & UCSD HDSI - Data Science Capstone Project
 
 ## Introduction
-- ... 
+- This is our Github repo including all the source codes and data files to do the analysis
 
 ## Overview
 - We try to closely follow the template for Data Science projects by <a href="https://drivendata.github.io/cookiecutter-data-science/">Cookie Cutter Data Sciece </a>
+- Please check out the below template to understand how to navigate our repo
 ```
 Project
 ├── .gitignore         <- Files to keep out of version control (e.g. data/binaries).
