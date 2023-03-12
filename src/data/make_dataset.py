@@ -3,12 +3,12 @@ import sqlite3
 import pandas as pd
 
 # Get data
-def get_data(filepath):
+def get_data(filepath, read_from_notebook=False, out_schema=False):
     """Get data for the models"""
-
-    if filepath not in ['./data/raw/user1/', './data/raw/user2/']:
-        return None
-
+    if not read_from_notebook:
+        if filepath not in ['./data/raw/user1/', './data/raw/user2/']:
+            return None
+        
     data = []
     time_df = []
 
@@ -51,8 +51,20 @@ def get_data(filepath):
     # elif filepath == '../data/raw/user2/':
     #     df.to_csv('../data/temp/datauser2.csv')
     
-    return df
-    
-    
+    if not out_schema:
+        return df
+    return df, schema, time_df
 
+def save_time_measurement(time_df, filepath, saved=False):
+    """Save some data files"""
+    all_time_df = pd.concat(time_df, ignore_index = True)
+    all_time_df = all_time_df.fillna(0)
+
+    if saved:
+        if 'user1' in filepath:
+            all_time_df.to_csv('timeuser1.csv')
+        else:
+            all_time_df.to_csv('timeuser2.csv')
+            
+    return all_time_df
     

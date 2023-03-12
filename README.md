@@ -32,11 +32,20 @@ Project
 │   │   └── train_model.py
 │   └── visualization  <- Scripts to create exploratory and results-oriented viz.
 │       └── visualize.py
-├── config
-│   ├── data-params.json <- Save the inputs for the function calls
-│   └── submission.json <- GitHub repo and Docker image links
+├── outputs 
+|   ├── HMM           <- the output results of the HMM model
+│   │   └── emission_mt_user1.txt
+|   │    ├── emission_mt_user2.txt
+|   │    ├── transition_mt_user1_top15apps.txt
+|   │    ├── transition_mt_user1_top1app.txt
+|   │    ├── transition_mt_user2_top15apps.txt
+|   │    └── transition_mt_user2_top1app.txt
+|   │
 │
-├── .ipynb_checkpoints <- temporary notebooks containing work in progress
+│
+└── config
+    ├── data-params.json <- Save the inputs for the function calls
+    └── submission.json <- GitHub repo and Docker image links
 
 ```
 
