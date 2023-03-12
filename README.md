@@ -1,10 +1,9 @@
 # Intel & UCSD HDSI -- Data Science Capstone Project -- 2022-2023
 
 ## Introduction
-- Hello everyone, we are Thy Nguyen, Milon Chakkalakal, and Pranav Thaenraj
-- Our project mentors are Jamel Tayeb, Bijan Arbab, Scruti Sahani, Oumaima Makhlouk, Praveen Polasam, and Chansik Im 
-- Our capstone project is "Discover User-App Interactions and Solutions to Reducing the Initial User-CPU Latency"
-- This is our Github repo including all the source codes and data files to do the analysis
+- Hello everyone, we are Thy Nguyen, Milon Chakkalakal, and Pranav Thaenraj from UC San Diego
+- Our advisors are Jamel Tayeb, Bijan Arbab, Scruti Sahani, Oumaima Makhlouk, Praveen Polasam, and Chansik Im from Intel
+- This is our Github repo including all the source codes and data files to do data collection and analysis for our capstone project _"Discover User-App Interactions and Solutions to Reducing the Initial User-CPU Latency"_
 
 ## Overview
 - We try to closely follow the template for Data Science projects by <a href="https://drivendata.github.io/cookiecutter-data-science/">Cookie Cutter Data Sciece </a>
