@@ -1,8 +1,10 @@
 from datetime import timedelta
 import numpy as np
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
-def rnn_feats(all_time_df, save_chrome_time=False, 
+#### Different dataframes for LSTM/RNN ###
+def rnn_ts_data(all_time_df, save_chrome_time=False, 
               save_all_apps_time=False, save_top_5_app_time=False, save_enum_app_time=False):
     all_time_df['Minute'] = all_time_df['MEASUREMENT_TIME'].dt.minute
     all_time_df['Day'] = all_time_df['MEASUREMENT_TIME'].dt.day
@@ -111,4 +113,109 @@ def rnn_feats(all_time_df, save_chrome_time=False,
         if save_enum_app_time:
             enumerated_combined_df.to_csv('../data/out/enumerated_app_time.csv')
         
-        return df_pivot, apps['chrome.exe'], all_app_df, top_5_app_df, enumerated_combined_df
+        return df_pivot, apps, all_app_df, top_5_app_df, enumerated_combined_df
+
+### Different Feature Engineering for bi-lstm ###
+def oh_day_sin_hr(apps, app_name, all_time_df):
+    """One hot encode the days; sin(hour)"""
+    day = 24
+    hours_incr = np.arange(24) + 1
+    sin_hrs = np.round(np.sin(hours_incr * (np.pi / day)),3)
+    
+    one_hot_day_encoded = {
+        'Monday': [1,0,0,0,0,0,0],
+        'Tuesday': [0,1,0,0,0,0,0],
+        'Wednesday': [0,0,1,0,0,0,0],
+        'Thursday': [0,0,0,1,0,0,0],
+        'Friday': [0,0,0,0,1,0,0],
+        'Saturday': [0,0,0,0,0,1,0],
+        'Sunday': [0,0,0,0,0,0,1]
+    }
+    apps[app_name]['date'] = all_time_df['Date'].unique()
+    apps[app_name]['Day_Week'] = pd.to_datetime(pd.Series(all_time_df['Date'].unique())).dt.day_name()
+    apps[app_name]['Day_Week'] = apps[app_name]['Day_Week'].apply(lambda x: one_hot_day_encoded[x])
+
+    vanilla_df = apps[app_name]
+    X = []
+    y = np.array([])
+    for row in vanilla_df.iterrows():
+        #print(row[1])
+        feats = []
+        for hr in sin_hrs:
+            feats = feats + [np.append(hr, row[1]['Day_Week'])]
+        targets = row[1][:24]
+        #print(np.array(feats).shape)
+        X = X + feats
+        y = np.append(y, np.array(targets))
+    
+    X = np.array(X)
+
+    return X, y
+
+def sin_hr(apps, app_name):
+    """Sin(hour)"""
+    day = 24
+    hours_incr = np.arange(24) + 1
+    sin_hrs = np.round(np.sin(hours_incr * (np.pi / day)),3)
+
+    vanilla_df = apps[app_name]
+    X = []
+    y = np.array([])
+    for row in vanilla_df.iterrows():
+        i = 0
+        for hr in sin_hrs:
+            X = X + [[hr]]
+            y = np.append(y, row[1][i])
+            i += 1    
+    X = np.array(X)
+
+    return X, y
+
+def oh_hr(apps, app_name):
+    """One-hot encode the hours"""
+    day = 24
+    hours_incr = np.arange(24) + 1
+    hrs = []
+    for i in range(day):
+        oh = np.zeros(day)
+        oh[i] = 1
+        hrs = hrs + [oh]
+
+    vanilla_df = apps[app_name]
+    X = []
+    y = np.array([])
+    for row in vanilla_df.iterrows():
+        #print(row[1])
+        feats = []
+        for hr in hrs:
+            feats = feats + [hr]
+        targets = row[1][:24]
+        #print(np.array(feats).shape)
+        X = X + feats
+        y = np.append(y, np.array(targets))
+    
+    X = np.array(X)
+
+    return X, y
+
+def feats(chrome, time_step, test_ratio=0.2):
+    """Lookback feature"""
+    obser = []
+    for r in chrome.iterrows():
+        obser.append(list(r[1][:24]))
+
+    all_obsers = []
+    for elems in obser:
+        for elem in elems:
+            all_obsers.append(elem)
+
+    n = len(all_obsers)
+    in_feats = []
+    out_target = []
+    for i in range(n - time_step):
+        for j in range(i, i + time_step):
+            if j + time_step < n:
+                in_feats.append(all_obsers[j: j + time_step])
+                out_target.append(all_obsers[j + time_step])
+    
+    return train_test_split(in_feats, out_target, test_size=test_ratio, shuffle=False)
