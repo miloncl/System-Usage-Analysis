@@ -22,6 +22,16 @@ Project
 |   ├── HMM.ipynb
 |   └── LSTM_RNN.ipynb
 ├── references         <- Data dictionaries, explanatory materials.
+|   ├── data_dictionaries
+|   |   ├── dataframe_description.txt
+|   |   └── schema.txt
+|   ├── weekly_presentation
+|   |   ├── [DSC 180B] - Quarter 2 Week 2.pdf
+|   |   ├── [DSC 180B] - Quarter 2 Week 3.pdf
+|   |   ├── [DSC 180B] - Quarter 2 Week 4.pdf
+|   |   ├── [DSC 180B] - Quarter 2 Week 5.pdf
+|   |   └── [DSC 180B] - Quarter 2 Week 6.pdf
+|   └── poster.pdf
 ├── requirements.txt   <- For reproducing the analysis environment, 
 ├── src                <- Source code for use in this project.
 │   ├── data           <- Scripts to download or generate data.
