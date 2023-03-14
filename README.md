@@ -18,30 +18,32 @@ Project
 │   ├── out            <- The final, canonical data sets for modeling.
 │   └── raw            <- The original, immutable data dump.
 ├── notebooks          <- Jupyter notebooks (presentation only).
+|   ├── Process and EDA.ipynb
+|   ├── HMM.ipynb
+|   └── LSTM_RNN.ipynb
 ├── references         <- Data dictionaries, explanatory materials.
-├── requirements.txt   <- For reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
+├── requirements.txt   <- For reproducing the analysis environment, 
 ├── src                <- Source code for use in this project.
 │   ├── data           <- Scripts to download or generate data.
-│   │   └── make_dataset.py
+│   │   ├── make_dataset.py
+│   │   └── foreground
+|   |       ├── foreground.c
+|   |       └── foreground.h 
 │   ├── features       <- Scripts to turn raw data into features for modeling.
 │   │   └── build_features.py
 │   ├── models         <- Scripts to train models and make predictions.
-│   │   ├── predict_model.py
-│   │   └── train_model.py
+│   │   ├── hmm_model.py
+│   │   └── lstm_model.py
 │   └── visualization  <- Scripts to create exploratory and results-oriented viz.
 │       └── visualize.py
 ├── outputs 
-|   ├── HMM           <- the output results of the HMM model
-│   │   └── emission_mt_user1.txt
-|   │    ├── emission_mt_user2.txt
-|   │    ├── transition_mt_user1_top15apps.txt
-|   │    ├── transition_mt_user1_top1app.txt
-|   │    ├── transition_mt_user2_top15apps.txt
-|   │    └── transition_mt_user2_top1app.txt
-|   │
-│
-│
+|   └── HMM           <- the output results of the HMM model (LSTM/RNN model results are inside the notebook)
+│       └── emission_mt_user1.txt
+|       ├── emission_mt_user2.txt
+|       ├── transition_mt_user1_top15apps.txt
+|       ├── transition_mt_user1_top1app.txt
+|       ├── transition_mt_user2_top15apps.txt
+|       └── transition_mt_user2_top1app.txt
 └── config
     ├── data-params.json <- Save the inputs for the function calls
     └── submission.json <- GitHub repo and Docker image links

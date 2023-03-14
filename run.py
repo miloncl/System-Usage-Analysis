@@ -9,7 +9,7 @@ sys.path.insert(0, 'src/features')
 
 from make_dataset import *
 from hmm_model import *
-from lstm_model import *
+# from lstm_model import *
 from build_features import *
 
 def main(targets):
@@ -40,9 +40,9 @@ def main(targets):
         hmm_transition_mt(df)
 
         # LSTM model
-        apps = lstm_data(**data_configuration)
-        model, out_df, X_train, X_test, y_train, y_test = bi_lstm(apps)
-        test_acc(out_df, at_most = 1)
+        # apps = lstm_data(**data_configuration)
+        # model, out_df, X_train, X_test, y_train, y_test = bi_lstm(apps)
+        # test_acc(out_df, at_most = 1)
 
 if __name__ == '__main__':
 
