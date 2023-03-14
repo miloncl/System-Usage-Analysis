@@ -75,8 +75,12 @@ Project
 
 ### Week 5:
 - Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/weekly_presentation/%5BDSC%20180B%5D%20-%20Quarter%202%20Week%205.pdf">RNN (Vanilla + LSTM)</a>
-- Source Code:
+- Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/notebooks/LSTM_RNN.ipynb">LSTM_RNN.ipynb</a>,  <a href=https://github.com/miloncl/System-Usage-Analysis/blob/main/src/models/lstm_model.py>lstm_model.py</a>
 
 ### Week 6:
 - Presentation: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/weekly_presentation/%5BDSC%20180B%5D%20%20-%20Quarter%202%20Week%206.pdf">LSTM Experiments</a>
-- Source Code:
+- Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/notebooks/LSTM_RNN.ipynb">LSTM_RNN.ipynb</a>, <a href=https://github.com/miloncl/System-Usage-Analysis/blob/main/src/models/lstm_model.py>lstm_model.py</a>
+
+### Week 7-9:
+- Project Poster: 
+- Practice presentation and elevator pitch in class
