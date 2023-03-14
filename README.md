@@ -37,7 +37,7 @@ Project
 │   └── visualization  <- Scripts to create exploratory and results-oriented viz.
 │       └── visualize.py
 ├── outputs 
-|   └── HMM           <- the output results of the HMM model (LSTM/RNN model results are inside the notebook)
+|   └── HMM           <- HMM model results (LSTM/RNN model results are inside the notebook)
 │       └── emission_mt_user1.txt
 |       ├── emission_mt_user2.txt
 |       ├── transition_mt_user1_top15apps.txt
@@ -84,5 +84,5 @@ Project
 - Source Code: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/notebooks/LSTM_RNN.ipynb">LSTM_RNN.ipynb</a>, <a href=https://github.com/miloncl/System-Usage-Analysis/blob/main/src/models/lstm_model.py>lstm_model.py</a>
 
 ### Week 7-9:
-- Project Poster: 
+- Project Poster: <a href="https://github.com/miloncl/System-Usage-Analysis/blob/main/references/poster.pdf">Poster</a>
 - Practice presentation and elevator pitch in class
